@@ -1,0 +1,5 @@
+C:\Users\Ric\workspace\portfolio\ZooObjects\ZooObjects\bin\Debug\ZooObjects.exe
+C:\Users\Ric\workspace\portfolio\ZooObjects\ZooObjects\bin\Debug\ZooObjects.pdb
+C:\Users\Ric\workspace\portfolio\ZooObjects\ZooObjects\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Ric\workspace\portfolio\ZooObjects\ZooObjects\obj\x86\Debug\ZooObjects.exe
+C:\Users\Ric\workspace\portfolio\ZooObjects\ZooObjects\obj\x86\Debug\ZooObjects.pdb
