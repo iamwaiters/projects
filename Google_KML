@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+  <name>test.kml</name>
+	<Style id="highlight">
+		<LineStyle>
+			<color>ff800080</color>
+			<width>2</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>7f808080</color>
+		</PolyStyle>
+	</Style>
+	<Style id="purplenormal">
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+		<LineStyle>
+			<color>00000000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff800080</color>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl60">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000aa</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff0000aa</color>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="silverparking">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#silvernormal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="purpleparking">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#purplenormal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="silvernormal">
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+		<LineStyle>
+			<color>00000000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ffc0c0c0</color>
+		</PolyStyle>
+	</Style>
+	<Style id="greennormal">
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+		<LineStyle>
+			<color>00000000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff008000</color>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="greenparking">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#greennormal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="yellownormal">
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+		<LineStyle>
+			<color>00000000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ffffff00</color>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin40">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000aa</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff0000aa</color>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="goldparking">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#goldnormal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="goldnormal">
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+		<LineStyle>
+			<color>00000000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff008080</color>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl6">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ffff</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff00ffff</color>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin3">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin40</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl60</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin4">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin4</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl6</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin4">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ffff</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff00ffff</color>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="yellowparking">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#yellownormal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder>
+		<name>parking</name>
+		<Placemark>
+			<name>Untitled Polygon</name>
+			<styleUrl>#m_ylw-pushpin4</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.6452077746826,44.04396568231057,0 -91.644506884012,44.04377733688112,0 -91.64401354642673,44.04468793901744,0 -91.6447781395805,44.0449136765364,0 -91.6452077746826,44.04396568231057,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>East Parking</name>
+			<styleUrl>#m_ylw-pushpin3</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.63580037482734,44.04198618262273,0 -91.63572747858665,44.0419525013501,0 -91.63576913402467,44.04189269241984,0 -91.63585253177456,44.0419189066569,0 -91.63597775796174,44.04170951293857,0 -91.6358370200179,44.04164966532252,0 -91.63588400913991,44.04155990591495,0 -91.63548350928426,44.04144013608636,0 -91.63560862205631,44.0413054217642,0 -91.63545278346774,44.04120795668646,0 -91.63517189137612,44.04113656487818,0 -91.63513018693359,44.04118151297166,0 -91.63508336686307,44.04115898600424,0 -91.63515122281035,44.04102032263329,0 -91.63505229653798,44.04099401375937,0 -91.63495841099736,44.04115514176495,0 -91.63486467242009,44.04114010083239,0 -91.6346926314957,44.04147733426162,0 -91.63365615199405,44.04119981001269,0 -91.63337724378422,44.0417651196923,0 -91.63360116888819,44.04184733579481,0 -91.63383899450076,44.04137983539328,0 -91.63461974506149,44.04158959015933,0 -91.63461973528318,44.04162699872845,0 -91.63531140386735,44.04181782991477,0 -91.63532690220235,44.0417841780691,0 -91.63563397208779,44.04188520134062,0 -91.6354148465155,44.04235213918916,0 -91.63559152309567,44.04239697677431,0 -91.63580037482734,44.04198618262273,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Gold Parking #3</name>
+			<description>Gold Parking #3
+Gold permits are sold by Parking Services for $195.00 per year. This allows parking in all gold parking lots throughout the academic year. Gold permits are available for employee and student commuters only. Most Gold lots are monitored between 7 a.m. - 5 p.m. Monday through Friday (Gold lots 5 &amp; 6 are monitored until 6 p.m. and Gold lot 4 is monitored 24 hours). Parking is prohibited in all Gold parking lots between the hours of 2:00 a.m. – 6:00 a.m. the entire year, Monday - Sunday.</description>
+			<styleUrl>#goldparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64594704390278,44.04624124919931,0 -91.64589967378878,44.046231030185,0 -91.64590450739391,44.04620376854266,0 -91.6457904965044,44.04617997295743,0 -91.64575255466077,44.0462106299357,0 -91.64475725053802,44.04594196263033,0 -91.64462400989342,44.04619426826414,0 -91.64576991092342,44.04650342032198,0 -91.64594704390278,44.04624124919931,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Gold Parking #1</name>
+			<description>Gold permits are sold by Parking Services for $195.00 per year. This allows parking in all gold parking lots throughout the academic year. Gold permits are available for employee and student commuters only. Most Gold lots are monitored between 7 a.m. - 5 p.m. Monday through Friday (Gold lots 5 &amp; 6 are monitored until 6 p.m. and Gold lot 4 is monitored 24 hours). Parking is prohibited in all Gold parking lots between the hours of 2:00 a.m. – 6:00 a.m. the entire year, Monday - Sunday.</description>
+			<styleUrl>#goldparking</styleUrl>
+			<Polygon>
+				<extrude>1</extrude>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64276015422566,44.04611909659572,0 -91.6428787464834,44.04592193460437,0 -91.64293079777734,44.04592874009581,0 -91.64296859707217,44.0458811148041,0 -91.64290223602174,44.04585045596365,0 -91.64305803832308,44.04553733525346,0 -91.64290225530587,44.04585726625426,0 -91.6430958600384,44.04546926743322,0 -91.64291677814269,44.04540859857838,0 -91.64282256509412,44.04538507490269,0 -91.64277523188315,44.04543943240805,0 -91.64276590785109,44.04539193394995,0 -91.64225340567977,44.04526513977611,0 -91.64222534397999,44.04530614487644,0 -91.64217809949214,44.04531298758185,0 -91.64214519262565,44.04535051015638,0 -91.64208869187513,44.04533704220679,0 -91.64201917391944,44.04544987910681,0 -91.64193419013155,44.04542953735151,0 -91.64188364111699,44.0455184379357,0 -91.64197307999294,44.04555567228658,0 -91.64181877593629,44.04584816071311,0 -91.64187498118341,44.04586842071858,0 -91.64187899757529,44.04590900882791,0 -91.64191635310769,44.04593948281808,0 -91.64189238183388,44.04597678090978,0 -91.64254880147615,44.04616015125906,0 -91.64276015422566,44.04611909659572,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Gold Parking #2</name>
+			<description>Gold Parking #2
+Gold permits are sold by Parking Services for $195.00 per year. This allows parking in all gold parking lots throughout the academic year. Gold permits are available for employee and student commuters only. Most Gold lots are monitored between 7 a.m. - 5 p.m. Monday through Friday (Gold lots 5 &amp; 6 are monitored until 6 p.m. and Gold lot 4 is monitored 24 hours). Parking is prohibited in all Gold parking lots between the hours of 2:00 a.m. – 6:00 a.m. the entire year, Monday - Sunday.</description>
+			<styleUrl>#goldparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64327505462974,44.04616853112509,0 -91.64341367678634,44.04589347892852,0 -91.6434504680923,44.04589754664297,0 -91.64363102893924,44.04558561074725,0 -91.64364262002125,44.04557332584705,0 -91.64354315831973,44.04554069438313,0 -91.64350829220058,44.04560816948024,0 -91.64340932940728,44.04558159304157,0 -91.6432071032396,44.04592204731527,0 -91.64320993160953,44.04593630750247,0 -91.64320993149242,44.04595056902249,0 -91.64311652787009,44.04593430591798,0 -91.64308253537477,44.04598526250668,0 -91.64316462679281,44.04601374463517,0 -91.64310799693455,44.04608305417435,0 -91.64309098418778,44.04610954318726,0 -91.64327505462974,44.04616853112509,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Gold parking #4</name>
+			<description>Gold parking #4
+Gold permits are sold by Parking Services for $195.00 per year. This allows parking in all gold parking lots throughout the academic year. Gold permits are available for employee and student commuters only. Most Gold lots are monitored between 7 a.m. - 5 p.m. Monday through Friday (Gold lots 5 &amp; 6 are monitored until 6 p.m. and Gold lot 4 is monitored 24 hours). Parking is prohibited in all Gold parking lots between the hours of 2:00 a.m. – 6:00 a.m. the entire year, Monday - Sunday.</description>
+			<styleUrl>#goldparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64507533258569,44.04758125651633,0 -91.64505969434805,44.04757226330595,0 -91.64496274595618,44.04754753491932,0 -91.64480944154209,44.04784209380379,0 -91.64493169800798,44.04788055485953,0 -91.64507533258569,44.04758125651633,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Gold parking #5</name>
+			<description>Gold parking #5
+Gold permits are sold by Parking Services for $195.00 per year. This allows parking in all gold parking lots throughout the academic year. Gold permits are available for employee and student commuters only. Most Gold lots are monitored between 7 a.m. - 5 p.m. Monday through Friday (Gold lots 5 &amp; 6 are monitored until 6 p.m. and Gold lot 4 is monitored 24 hours). Parking is prohibited in all Gold parking lots between the hours of 2:00 a.m. – 6:00 a.m. the entire year, Monday - Sunday.</description>
+			<styleUrl>#goldparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64483096740592,44.047963919396,0 -91.64426415841854,44.04780900519484,0 -91.64423909429688,44.0478472267328,0 -91.64480253330072,44.04800891516054,0 -91.64483096740592,44.047963919396,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Gold Parking #6</name>
+			<description>Gold Parking #6
+Gold permits are sold by Parking Services for $195.00 per year. This allows parking in all gold parking lots throughout the academic year. Gold permits are available for employee and student commuters only. Most Gold lots are monitored between 7 a.m. - 5 p.m. Monday through Friday (Gold lots 5 &amp; 6 are monitored until 6 p.m. and Gold lot 4 is monitored 24 hours). Parking is prohibited in all Gold parking lots between the hours of 2:00 a.m. – 6:00 a.m. the entire year, Monday - Sunday.</description>
+			<styleUrl>#goldparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64393241511426,44.04831623611302,0 -91.6439480059142,44.04828484752172,0 -91.64403541401052,44.04830732911269,0 -91.64405725119505,44.04825351241708,0 -91.64409474873825,44.04826027172115,0 -91.64421655039106,44.04802028668564,0 -91.64409783353511,44.04798891129576,0 -91.64414194403818,44.04791472927222,0 -91.64408887353935,44.04789900000512,0 -91.6440447644796,44.04796874004794,0 -91.6439917419205,44.04795303807401,0 -91.64384197024332,44.04826244271374,0 -91.643891864211,44.04827363603306,0 -91.64389186497004,44.04830502095687,0 -91.64393241511426,44.04831623611302,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>gold parking #7</name>
+			<description>gold parking #7
+Gold permits are sold by Parking Services for $195.00 per year. This allows parking in all gold parking lots throughout the academic year. Gold permits are available for employee and student commuters only. Most Gold lots are monitored between 7 a.m. - 5 p.m. Monday through Friday (Gold lots 5 &amp; 6 are monitored until 6 p.m. and Gold lot 4 is monitored 24 hours). Parking is prohibited in all Gold parking lots between the hours of 2:00 a.m. – 6:00 a.m. the entire year, Monday - Sunday.</description>
+			<styleUrl>#goldparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64479922208261,44.04820224594864,0 -91.64472366085344,44.0481729744164,0 -91.64455466179675,44.04849415173701,0 -91.64462379948191,44.04851231296407,0 -91.64458631417818,44.04859772476527,0 -91.6445046681397,44.04858624921076,0 -91.64442341599876,44.0487547132598,0 -91.64448621159832,44.04876846561312,0 -91.64479922208261,44.04820224594864,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Gold parking #8</name>
+			<description>Gold parking #8
+Gold permits are sold by Parking Services for $195.00 per year. This allows parking in all gold parking lots throughout the academic year. Gold permits are available for employee and student commuters only. Most Gold lots are monitored between 7 a.m. - 5 p.m. Monday through Friday (Gold lots 5 &amp; 6 are monitored until 6 p.m. and Gold lot 4 is monitored 24 hours). Parking is prohibited in all Gold parking lots between the hours of 2:00 a.m. – 6:00 a.m. the entire year, Monday - Sunday.</description>
+			<styleUrl>#goldparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64436073928087,44.04953448026266,0 -91.64429204433694,44.04951203552798,0 -91.64408729923338,44.04989917297672,0 -91.64414652507527,44.04991484366895,0 -91.64436073928087,44.04953448026266,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>gold parking #9</name>
+			<description>gold parking #9
+Gold permits are sold by Parking Services for $195.00 per year. This allows parking in all gold parking lots throughout the academic year. Gold permits are available for employee and student commuters only. Most Gold lots are monitored between 7 a.m. - 5 p.m. Monday through Friday (Gold lots 5 &amp; 6 are monitored until 6 p.m. and Gold lot 4 is monitored 24 hours). Parking is prohibited in all Gold parking lots between the hours of 2:00 a.m. – 6:00 a.m. the entire year, Monday - Sunday.</description>
+			<styleUrl>#goldparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64389378164908,44.04927387042273,0 -91.64368513805599,44.04922008411872,0 -91.6437038874878,44.04918196724203,0 -91.64344186490682,44.0491169423868,0 -91.64341690507413,44.04916851546618,0 -91.64331396909336,44.04914609552318,0 -91.64329525794607,44.04918197168758,0 -91.64386259692752,44.0493321182812,0 -91.64389378164908,44.04927387042273,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Gold Parking #10</name>
+			<description>Gold Parking #10
+Gold permits are sold by Parking Services for $195.00 per year. This allows parking in all gold parking lots throughout the academic year. Gold permits are available for employee and student commuters only. Most Gold lots are monitored between 7 a.m. - 5 p.m. Monday through Friday (Gold lots 5 &amp; 6 are monitored until 6 p.m. and Gold lot 4 is monitored 24 hours). Parking is prohibited in all Gold parking lots between the hours of 2:00 a.m. – 6:00 a.m. the entire year, Monday - Sunday.</description>
+			<styleUrl>#goldparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64213906040791,44.04896453465793,0 -91.64165563313323,44.04882781646703,0 -91.64161510322158,44.04891064489715,0 -91.64210150924755,44.0490318256301,0 -91.64213906040791,44.04896453465793,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Gold Parking #11</name>
+			<description>Gold Parking #11
+Gold permits are sold by Parking Services for $195.00 per year. This allows parking in all gold parking lots throughout the academic year. Gold permits are available for employee and student commuters only. Most Gold lots are monitored between 7 a.m. - 5 p.m. Monday through Friday (Gold lots 5 &amp; 6 are monitored until 6 p.m. and Gold lot 4 is monitored 24 hours). Parking is prohibited in all Gold parking lots between the hours of 2:00 a.m. – 6:00 a.m. the entire year, Monday - Sunday.</description>
+			<styleUrl>#goldparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64169928742484,44.04945552076133,0 -91.64134990739458,44.04937030872868,0 -91.64128442240559,44.04950482817979,0 -91.64163035664157,44.04958992008708,0 -91.64169928742484,44.04945552076133,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Maxwell Parking</name>
+			<description>Maxwell Parking
+The cost of a Purple permit is $90.00. Persons (faculty, staff &amp; students) who do not reside on campus and commute can purchase this type of permit. Purple lots are monitored between 7 a.m. - 5 p.m. Monday through Friday. Parking is prohibited in all Purple parking lots between the hours of 2:00 a.m. – 6:00 a.m. the entire year, Monday - Sunday.</description>
+			<styleUrl>#purpleparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64240030865754,44.04826388056325,0 -91.64212606567568,44.04818097864399,0 -91.64208253420557,44.04824139302023,0 -91.64193902547754,44.04822133393719,0 -91.64185171165705,44.04822813331493,0 -91.64186730934166,44.04826393669475,0 -91.64194218045105,44.0482616158773,0 -91.64198277337842,44.04828172329204,0 -91.64232622860929,44.04838020688533,0 -91.64240030865754,44.04826388056325,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Purple parking#14</name>
+			<description>Purple parking#14
+The cost of a Purple permit is $90.00. Persons (faculty, staff &amp; students) who do not reside on campus and commute can purchase this type of permit. Purple lots are monitored between 7 a.m. - 5 p.m. Monday through Friday. Parking is prohibited in all Purple parking lots between the hours of 2:00 a.m. – 6:00 a.m. the entire year, Monday - Sunday.</description>
+			<styleUrl>#purpleparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64365052875228,44.04495212569041,0 -91.64350016046448,44.04491051156425,0 -91.6432980462963,44.04530850823348,0 -91.64344362202274,44.04534762501163,0 -91.64365052875228,44.04495212569041,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Purple Parking #13</name>
+			<description>Purple Parking #13
+The cost of a Purple permit is $90.00. Persons (faculty, staff &amp; students) who do not reside on campus and commute can purchase this type of permit. Purple lots are monitored between 7 a.m. - 5 p.m. Monday through Friday. Parking is prohibited in all Purple parking lots between the hours of 2:00 a.m. – 6:00 a.m. the entire year, Monday - Sunday.</description>
+			<styleUrl>#purpleparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64260807952226,44.04464976677103,0 -91.64239349077396,44.04458721701487,0 -91.64217011514805,44.04499955469814,0 -91.64238913219691,44.04506187122327,0 -91.64260807952226,44.04464976677103,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Purlple parking #15</name>
+			<description>Purlple parking #15
+The cost of a Purple permit is $90.00. Persons (faculty, staff &amp; students) who do not reside on campus and commute can purchase this type of permit. Purple lots are monitored between 7 a.m. - 5 p.m. Monday through Friday. Parking is prohibited in all Purple parking lots between the hours of 2:00 a.m. – 6:00 a.m. the entire year, Monday - Sunday.</description>
+			<styleUrl>#purpleparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64376665675729,44.04476786187513,0 -91.64390487082464,44.04452064862724,0 -91.64273614191771,44.04420213969729,0 -91.64260806474088,44.04444991803347,0 -91.6428105376703,44.04450060888335,0 -91.64286841959434,44.0444054325457,0 -91.64308746977619,44.04446776737208,0 -91.64304999775477,44.04456892290226,0 -91.64376665675729,44.04476786187513,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Purple parking #16</name>
+			<description>Purple parking #16
+The cost of a Purple permit is $90.00. Persons (faculty, staff &amp; students) who do not reside on campus and commute can purchase this type of permit. Purple lots are monitored between 7 a.m. - 5 p.m. Monday through Friday. Parking is prohibited in all Purple parking lots between the hours of 2:00 a.m. – 6:00 a.m. the entire year, Monday - Sunday.</description>
+			<styleUrl>#purpleparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64146216778083,44.0448089580504,0 -91.64077666915411,44.04461038680008,0 -91.64076011920488,44.0446460286631,0 -91.64145417264159,44.04483583418781,0 -91.64155254277684,44.04467522490732,0 -91.64122739381249,44.04457761744194,0 -91.64124816716551,44.0445419742323,0 -91.64158624529989,44.04462793333256,0 -91.64161991651513,44.04458054622857,0 -91.64194231496256,44.04466969052646,0 -91.64196698252415,44.04461321684357,0 -91.64165292262709,44.04453299953178,0 -91.64146216778083,44.0448089580504,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Gold Parking #12</name>
+			<description>Gold Parking #12</description>
+			<styleUrl>#goldparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.63976784491699,44.04778488675044,0 -91.63914991548985,44.0476137034427,0 -91.63912418910283,44.04770617958741,0 -91.63970973686131,44.04786321071778,0 -91.63976784491699,44.04778488675044,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Silver Parking # 21</name>
+			<description>Silver Parking # 21
+Only students who live in the residence halls on the Main Campus may apply for a Silver permit. Silver lots are monitored 24 hours a day Monday through Friday. Permit holders are allowed to park in these lots 24/7 unless otherwise posted for maintenance, snow removal or some other function. The cost of a Silver permit is $135.00.</description>
+			<styleUrl>#silverparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64349683870282,44.04369617246938,0 -91.64364483499526,44.04373311284702,0 -91.64375417925919,44.04351905661254,0 -91.64353496331336,44.04345427474777,0 -91.6435736172018,44.04338914142798,0 -91.6434315048393,44.0433566689428,0 -91.64339284047209,44.04340784886156,0 -91.64332827604328,44.04339394373814,0 -91.64316686032234,44.04334291135194,0 -91.64312236072604,44.04339897605478,0 -91.64306304896495,44.04339387295299,0 -91.64284332538699,44.04378891908984,0 -91.64334196339237,44.04392388663658,0 -91.64342580997649,44.04383092832133,0 -91.64349683870282,44.04369617246938,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Silver Parking #22</name>
+			<description>Silver Parking #22
+Only students who live in the residence halls on the Main Campus may apply for a Silver permit. Silver lots are monitored 24 hours a day Monday through Friday. Permit holders are allowed to park in these lots 24/7 unless otherwise posted for maintenance, snow removal or some other function. The cost of a Silver permit is $135.00.</description>
+			<styleUrl>#silverparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64808470181595,44.04437455740543,0 -91.64814257219281,44.0444024255979,0 -91.64843822938005,44.04384561534561,0 -91.64839881984614,44.0437529955422,0 -91.64819280370318,44.04370180302018,0 -91.64825883682464,44.04358990262506,0 -91.64815528779043,44.04356212482846,0 -91.64808328584607,44.04366460403246,0 -91.64765773253636,44.04355296624151,0 -91.64762528882703,44.04360874494348,0 -91.64756079102224,44.0435762156954,0 -91.64729702392701,44.04406333702786,0 -91.64716138798134,44.04403544909145,0 -91.64713567299974,44.04409579717061,0 -91.64728425658417,44.04415155501841,0 -91.64725213507562,44.04421655527847,0 -91.64803338038801,44.04443491607656,0 -91.64808470181595,44.04437455740543,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Silver parking #19</name>
+			<description>Silver parking #19
+Only students who live in the residence halls on the Main Campus may apply for a Silver permit. Silver lots are monitored 24 hours a day Monday through Friday. Permit holders are allowed to park in these lots 24/7 unless otherwise posted for maintenance, snow removal or some other function. The cost of a Silver permit is $135.00.</description>
+			<styleUrl>#silverparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.6464011971745,44.04784263056909,0 -91.64684697498434,44.04703474373341,0 -91.64622645201227,44.04686768022932,0 -91.64599365269436,44.04730861353886,0 -91.64645831437386,44.04743387234405,0 -91.64652930668807,44.04747098780294,0 -91.64652297693522,44.04749421267452,0 -91.64643934683497,44.04751284130297,0 -91.64628491271773,44.04780083914045,0 -91.6464011971745,44.04784263056909,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Silver Parking #13</name>
+			<description>Silver Parking #13
+Only students who live in the residence halls on the Main Campus may apply for a Silver permit. Silver lots are monitored 24 hours a day Monday through Friday. Permit holders are allowed to park in these lots 24/7 unless otherwise posted for maintenance, snow removal or some other function. The cost of a Silver permit is $135.00.</description>
+			<styleUrl>#silverparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64680069491794,44.04650458453529,0 -91.64644461547781,44.04640557449545,0 -91.64646196925439,44.04636425848142,0 -91.64639315398092,44.04634358925985,0 -91.64636432954868,44.04638077848028,0 -91.64627826422027,44.04636011919136,0 -91.64623781168797,44.0464014962193,0 -91.64622610708862,44.04646759872011,0 -91.64673150484651,44.04662019364128,0 -91.64680069491794,44.04650458453529,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Yellow_gold parking #3 bikerack</name>
+			<description>Bike Rental
+Students in good standing and employees of Winona State University are eligible to become members of the Bike Rental program. As a member of Bike Rental Program, members will be permitted to rent bicycles and related equipment (helmet, cable and lock key) for up to five hours at a time at no cost. Bikes are rented between 8:00 am and sunset, 7 days a week, between March and December (weather permitting). Bikes are available by stopping by and inquiring with one of the friendly student staff at the Student Resource Center (lower level Kryzsko Commons). Be sure to bring your ID and get ready to enjoy Winona the “Greener” way.
+
+One of the bikes available for rent from WSU.
+
+Bike Station
+Students and employees of Winona State University have access to utilize this wonderful bike self-service station located between Kryzsko Commons and Huff St. in the basement of Lucas Hall. Student staffing in this locationassures that you will be well informed as you learn to tune up your own bike. Chat with student staffers Ryan or Patrick the next time your chain is ailing you or you are in need of a straightening of your front wheel. Hours are Mon-Fri 12am – 4pm during the regular school year.</description>
+			<styleUrl>#yellowparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.6458253643134,44.04641672009671,0 -91.64566064477258,44.04637293767097,0 -91.64559929932122,44.04645362482992,0 -91.64577384112202,44.04649748004757,0 -91.6458253643134,44.04641672009671,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Yellow Minne hall parking</name>
+			<description>Bike Rental
+Students in good standing and employees of Winona State University are eligible to become members of the Bike Rental program. As a member of Bike Rental Program, members will be permitted to rent bicycles and related equipment (helmet, cable and lock key) for up to five hours at a time at no cost. Bikes are rented between 8:00 am and sunset, 7 days a week, between March and December (weather permitting). Bikes are available by stopping by and inquiring with one of the friendly student staff at the Student Resource Center (lower level Kryzsko Commons). Be sure to bring your ID and get ready to enjoy Winona the “Greener” way.
+
+
+Bike Station
+Students and employees of Winona State University have access to utilize this wonderful bike self-service station located between Kryzsko Commons and Huff St. in the basement of Lucas Hall. Student staffing in this locationassures that you will be well informed as you learn to tune up your own bike. Chat with student staffers Ryan or Patrick the next time your chain is ailing you or you are in need of a straightening of your front wheel. Hours are Mon-Fri 12am – 4pm during the regular school year.</description>
+			<styleUrl>#yellowparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64508473699858,44.04655690209286,0 -91.64516543739575,44.04641056355035,0 -91.64510446238137,44.04639589532733,0 -91.64502340730861,44.04653496038966,0 -91.64508473699858,44.04655690209286,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Yellow Phelps bike rack</name>
+			<description>Bike Rental
+Students in good standing and employees of Winona State University are eligible to become members of the Bike Rental program. As a member of Bike Rental Program, members will be permitted to rent bicycles and related equipment (helmet, cable and lock key) for up to five hours at a time at no cost. Bikes are rented between 8:00 am and sunset, 7 days a week, between March and December (weather permitting). Bikes are available by stopping by and inquiring with one of the friendly student staff at the Student Resource Center (lower level Kryzsko Commons). Be sure to bring your ID and get ready to enjoy Winona the “Greener” way.
+
+Bike Station
+Students and employees of Winona State University have access to utilize this wonderful bike self-service station located between Kryzsko Commons and Huff St. in the basement of Lucas Hall. Student staffing in this locationassures that you will be well informed as you learn to tune up your own bike. Chat with student staffers Ryan or Patrick the next time your chain is ailing you or you are in need of a straightening of your front wheel. Hours are Mon-Fri 12am – 4pm during the regular school year.</description>
+			<styleUrl>#yellowparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.6425276269804,44.04801535679174,0 -91.64258879103366,44.04805198270681,0 -91.64256837698764,44.04794945412036,0 -91.6426193437451,44.04795678230521,0 -91.6425276269804,44.04801535679174,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Tan Tau parking</name>
+			<styleUrl>#greenparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.67028627078247,44.05014911532449,0 -91.67034257157096,44.05014650313531,0 -91.6704813967587,44.05014095398742,0 -91.67069491611485,44.05000030949578,0 -91.67070617954241,44.04997068738651,0 -91.67082242689486,44.04990061761177,0 -91.67057923128674,44.04970693748476,0 -91.67054173700302,44.04968808704847,0 -91.67051550254428,44.04966382207565,0 -91.67050808093114,44.04962333088896,0 -91.67054191945272,44.04962061836311,0 -91.67055320455877,44.04912029599706,0 -91.67052317578653,44.04906062268611,0 -91.67047428003201,44.04900365844689,0 -91.67043659275331,44.04896585157768,0 -91.67034993881646,44.04894192786068,0 -91.67035008363773,44.04971246951507,0 -91.6705188931641,44.04982546420331,0 -91.67052628984615,44.04987655031641,0 -91.67038754883637,44.04998186871125,0 -91.67037633208003,44.0500709696895,0 -91.67029376301927,44.05008717077605,0 -91.67028627078247,44.05014911532449,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Green Tau Parking</name>
+			<styleUrl>#greenparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.6700909391208,44.04993260548375,0 -91.67007538176418,44.04955141315656,0 -91.66997386709835,44.049543391203,0 -91.66997423876107,44.04965990893115,0 -91.66989931444364,44.04967894648817,0 -91.66989642333287,44.04991641614927,0 -91.66998236229276,44.04991372131467,0 -91.66999733097049,44.04992989566016,0 -91.6700909391208,44.04993260548375,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Green Maria parking</name>
+			<description>Green Maria parking</description>
+			<styleUrl>#greenparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.67224299498668,44.05081903031039,0 -91.67176824129948,44.05077845610174,0 -91.67151638667176,44.05068404574473,0 -91.67080375021787,44.0506626244919,0 -91.67079272283563,44.05090766674703,0 -91.67141800107673,44.05091002644764,0 -91.67141788464542,44.05093682366072,0 -91.67146277597887,44.05093682213136,0 -91.67146267156272,44.05098780186624,0 -91.67141406613706,44.05098781225039,0 -91.6714104621654,44.05103094892631,0 -91.67089074855355,44.05103872787382,0 -91.67088698989174,44.05122420141327,0 -91.67149706245162,44.05123328367903,0 -91.67149702864839,44.05120632764783,0 -91.67208267673627,44.05120155371062,0 -91.67208775388531,44.05100249448288,0 -91.67224281866106,44.05100005133144,0 -91.67224299498668,44.05081903031039,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Green Lourdes Hall</name>
+			<styleUrl>#greenparking</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.6701284403852,44.05206795887509,0 -91.67003877376519,44.05205970782606,0 -91.67003801433481,44.05199238752503,0 -91.66960608501456,44.05198599868632,0 -91.66959047638321,44.05172964793017,0 -91.66928339991384,44.05172986168895,0 -91.66928349715096,44.05212127148624,0 -91.67012898727656,44.05212452175812,0 -91.6701284403852,44.05206795887509,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>
