@@ -218,15 +218,9 @@ namespace Shapes
                         iRight = 0;
                         break;
                     case 6:
+                        Console.WriteLine("Thank you for using my application");
                         done = true;
-                        Console.WriteLine("Please use your keyboard");
-                        Console.WriteLine("calculate the size of.");
-                        Console.WriteLine("#1 - Square #2 - Rectangle");
-                        Console.WriteLine("#3 - Parallelogram #4 - Trapezoid");
-                        Console.WriteLine("#5 - Quadrilateral");
-                        Console.WriteLine("Type Esc to exit applcation");
-                        iRight = 0;
-                        iRight = Convert.ToInt16(Console.ReadLine());
+                        
                         break;
 
                     default:
