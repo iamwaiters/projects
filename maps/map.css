@@ -1,0 +1,128 @@
+ body {
+    font-family: sans-serif;
+  color: white;
+  }
+
+  #map_canvas {
+	border: 1px solid black;
+	width:900px;
+	height:689px;
+	position:absolute;
+	left: 420px;
+	top: 88px;
+	z-index: -1;
+  }
+  
+#piclegend{
+  margin: 2px;
+float:left;
+width:200px;
+height:300px;
+top:390px;
+background: #4B08A1;
+position:absolute;
+color: white;
+}
+
+#heading {
+    font-weight: bold;
+    margin: 2px;
+	width:200px;
+	height:300px;
+	float:left;
+	position:absolute;
+	background: #4B08A1;
+	color: white;
+  }
+
+  #container {
+	margin: auto;
+	width: 95%;
+	-webkit-box-shadow: 5px 5px 5px #000033;
+	-moz-box-shadow: 5px 5px 5px #000033;
+	box-shadow: 5px 5px 5px #000033;
+  }
+
+  #westNav {
+	position: absolute;
+	display: block;
+	width: 70px;
+	height: 697px;
+	z-index: 1;
+	left: 420px;
+	top: 500;
+}
+#westNav img:hover {
+	background: gray;
+}
+#eastNav {
+	position: absolute;
+	display: block;
+	width: 70px;
+	height: 697px;
+	z-index: 1;
+	left: 75%;
+	top: 500;
+}
+#eastNav img:hover {
+	background: gray;
+}
+
+#mainNav {
+	position: absolute;
+	display: block;
+	height: 42px;
+	width: 500px;
+	z-index: 1;
+	left: 45%;
+	top: 76%;
+}
+#mainNav img:hover {
+	background: gray;
+}
+
+#accDeal {
+	position: absolute;
+	display: block;
+	width: 70px;
+	z-index: 1;
+	left: 1025px;
+	top: 75;
+}
+  #accordion {
+	list-style: none;
+	padding: 0 0 0 0;
+	width: 170px;
+	
+}
+#accordion li{
+	display: block;
+	background-color: gray;
+	opacity:0.4;
+	filter:alpha(opacity=40); /* For IE8 and earlier */
+	font-weight: bold;
+	margin: 1px;
+	cursor: pointer;
+	padding: 5 5 5 7px;
+	list-style: circle;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+#accordion ul {
+	list-style: none;
+	padding: 0 0 0 0;
+	display: none;
+}
+#accordion ul li{
+	font-weight: normal;
+	cursor: auto;
+	background-color: white;
+	padding: 0 0 0 7px;
+}
+#accordion a {
+	text-decoration: none;
+}
+#accordion a:hover {
+	text-decoration: underline;
+}
