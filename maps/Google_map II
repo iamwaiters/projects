@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>WSU Campus Map</title>
+<link href="map.css" rel="stylesheet">
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+google.load("map", "3",  {other_params:"sensor=false"});
+  var map;
+  
+  var kmlLayer = null;
+	var trafficLayer = null;
+	var weatherLayer = null;
+	var currentLayer = null;
+	var educationLayer = null;
+	var residentsLayer = null;
+	var parkingLayer = null;
+	var sportsLayer = null;
+	var callblueLayer = null;
+  
+  
+  
+  function initialize() {
+    var myLatlng = new google.maps.LatLng(44.047429,-91.643754);
+    var myOptions = {
+      zoom: 17,
+      center: myLatlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+	  
+    }
+    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    
+    trafficLayer = new google.maps.TrafficLayer();
+    weatherLayer = new google.maps.weather.WeatherLayer({temperatureUnits: google.maps.weather.TemperatureUnit.FAHRENHEIT});
+	var cloudLayer = new google.maps.weather.CloudLayer();
+	currentLayer.setMap(map);
+	
+	
+  
+  }
+  
+  
+    function mainCampus() {
+    map.setCenter(new google.maps.LatLng(44.047429,-91.643754));
+    map.setZoom(17);
+  }
+  
+   function westCampus() {
+    map.setCenter(new google.maps.LatLng(44.051137,-91.670405));
+    map.setZoom(17);
+  }
+  
+   function eastCampus() {
+    map.setCenter(new google.maps.LatLng(44.041883,-91.634672));
+    map.setZoom(17);
+  }
+
+  function traffic() {
+  if(document.getElementById("trafButton").checked) {
+	trafficLayer.setMap(map);
+	 map.setZoom(17);
+	currentLayer = trafficLayer.setMap;
+  } else {
+	 trafficLayer.setMap(null);
+	}
+  }
+  
+  function weather() {
+	if(document.getElementById("weatButton").checked){
+     weatherLayer.setMap(map);
+	  map.setZoom(17);
+    currentLayer = weatherLayer.setMap;
+	} else {
+		  weatherLayer.setMap(null);
+	}
+  }
+  
+  
+ function education() {
+	if(document.getElementById("eduButton").checked) {
+	url = "https://xwebdev.winona.edu/webteam/ric/kmz/academicbuildings.kmz";
+	educationLayer = new google.maps.KmlLayer(url, {map: map});
+    currentLayer = educationLayer;
+	} else {
+		educationLayer.setMap(null);
+	
+	}
+
+}
+
+function residents() {
+	if(document.getElementById("resButton").checked){
+	url = "https://xwebdev.winona.edu/webteam/ric/kmz/residents.kmz";
+	residentsLayer = new google.maps.KmlLayer(url, {map: map});
+    currentLayer = residentsLayer;
+	} else {
+		residentsLayer.setMap(null);
+	}
+
+}
+
+function parking() {
+	if(document.getElementById("parButton").checked) {
+	url = "https://xwebdev.winona.edu/webteam/ric/kmz/parking.kmz";
+	parkingLayer = new google.maps.KmlLayer(url, {map: map});
+    currentLayer = parkingLayer;
+	} else {
+		parkingLayer.setMap(null);
+	}
+
+}
+
+function sports() {
+	if(document.getElementById("sporButton").checked) {
+	url = "https://xwebdev.winona.edu/webteam/ric/kmz/athleticfields.kmz";
+	sportsLayer = new google.maps.KmlLayer(url, {map: map});
+    currentLayer = sportsLayer;
+	} else {
+		sportsLayer.setMap(null);
+	}
+}
+
+  
+  function kmlKeyUp(e) {
+    var keyCode;
+  
+    if (window.event) {
+        keyCode = window.event.keyCode;
+    } else if (variable) {
+        keyCode = e.which;
+    }
+  
+    if (keyCode == 13) {
+        document.getElementById("kmlUrl").blur();
+        document.getElementById("kmlButton").click();
+    }
+  
+
+  
+  }
+  
+
+
+function detectwindowsidth() {
+var info = screen.availWidth;
+return info;
+}
+
+	
+	
+jQuery.fn.centerDiv = function (options) {
+    var o = this;
+    $(window).bind('load resize',function(){
+        $(o).each(function(){
+            $(this).css({
+                position:'absolute',
+                left: ($(window).width() - $(this).outerWidth())/2,
+                top: ($(window).height() - $(this).outerHeight())/2
+            });
+ 
+        });
+    });
+ 
+}
+</script>
+
+</head>
+<body style="margin:0px; padding:0px;" onload="initialize()",  map_canvas.centerDiv()>
+
+<div id="map_canvas"></div>
+	<div style="margin-left:50px;">
+        <ul id="menu">
+            <li class="logo">
+                <img style="float:left;" alt="" src="nav/winonastate.png"/>
+                <ul id="main">
+						<li><a href="#"> 
+							<table  style="color: black">
+								<tr>
+									<td id="gold" width="30" bgcolor="gold"></td>
+									<td align="center" >Gold Parking</td>
+								</tr>
+								<tr>
+									<td id="silver" width="30" bgcolor="silver"></td>
+									<td align="center">Silver Parking</td>
+								</tr>
+								<tr>
+									<td id="purple" width="30" bgcolor="purple"></td>
+									<td align="center">Purple Parking</td>
+								</tr>
+								<tr>
+									<td id="yellow" width="30" bgcolor="yellow"></td>
+									<td align="center">Cycle Parking</td>
+								</tr>
+								<tr>
+									<td id="marron" width="30" bgcolor="red"></td>
+									<td align="center">Metered Parking</td>
+								</tr>
+								<tr>
+									<td id="bus"><img src="images/bus.png" width="30" height="40" alt="Winona Logo"></td>
+									<td align="center">Shuttle Bus Stop</td>
+								</tr>
+								<tr>
+									<td id="courtesy"><img src="images/phone.png" width="30" height="40" alt="Winona Logo"></td>
+									<td align="center">Courtesy Phone</td>
+								</tr>
+								<tr>
+									<td id="emergency"><img src="images/codeBlue.png" width="30" height="40" alt="Winona Logo"></td>
+									<td align="center">Call Blues</td>
+								</tr>
+						  </table >  
+
+						</a></li>
+						<img class="logo_inset_right" alt="" src="nav/corner_blue_left.png"/>
+                        <!-- 
+						
+                        <img class="middle" alt="" src="nav/dot_blue.png"/>
+                        <img class="corner_right" alt="" src="nav/corner_blue_right.png"/>
+						-->
+                    </li>
+					<li class="last">
+                        <img class="corner_left" alt="" src="nav/corner_blue_left.png"/>
+                        <img class="middle" alt="" src="nav/dot_blue.png"/>
+                        <img class="corner_right" alt="" src="nav/corner_blue_right.png"/>
+                    </li>
+                </ul>
+                
+            </li>
+            <li><a href="#">Features</a>
+                <ul id="last">
+                    <li>
+                        <img class="corner_inset_left" alt="" src="nav/corner_inset_left.png"/>
+                        <a href="#">Select All</a>
+                        <img class="corner_inset_right" alt="" src="nav/corner_inset_right.png"/>
+                    </li>
+                    
+		<li><a href="#">
+		<table style="color: black">
+							<tr>
+							  <td><input onclick="weather()" type="checkbox" name="weatlayer" id="weatButton" value="weather"/></td>
+							  <td align="left">Weather</td>
+							</tr>
+							<tr>
+							  <td><input onclick="traffic()" type="checkbox" name="layer" id="trafButton" value="traffic"/></td>
+							  <td align="left">Traffic</td>
+							</tr>
+							<tr>
+							<tr>
+							  <td><input onclick="residents()" type="checkbox" name="res" id="resButton" value="residents"/></td>
+							  <td align="left">Residents Halls</td>
+							</tr>
+							<tr>
+							  <td><input onclick="parking()" type="checkbox" name="layer" id="parButton" value="parking"/></td>
+							  <td align="left">Parking Spaces</td>
+							</tr>
+							 <tr>
+							  <td><input onclick="sports()" type="checkbox" name="layer" id="sporButton" value="sports"/></td>
+							  <td align="left">Sports Faciluties</td>
+							</tr>
+							<tr>
+							  <td><input onclick="education()" type="checkbox" name="layer" id="eduButton" value="callblue"/></td>
+							  <td align="left">Education Halls</td>
+							</tr>
+							
+						</table>
+		</a></li>
+		
+	
+                    <li class="last">
+                        <img class="corner_left" alt="" src="nav/corner_left.png"/>
+                        <img class="middle" alt="" src="nav/dot.gif"/>
+                        <img class="corner_right" alt="" src="nav/corner_right.png"/>
+                    </li>
+                </ul>
+            </li>
+            <li class="searchContainer">
+                <div>
+                <input type="text" id="searchField" />
+                <img src="nav/magnifier.png" alt="Search" onclick="alert('You clicked on search button')" /></div>
+                <ul id="search">
+                    <li>
+                        <img class="corner_inset_left" alt="" src="nav/corner_inset_left.png"/>
+                        <input id="cbxAll" type="checkbox" />All
+                        <img class="corner_inset_right" alt="" src="nav/corner_inset_right.png"/>
+                    </li>
+                    <li><input id="Articles" type="checkbox" />Articles</li>
+                    <li><input id="Tutorials" type="checkbox" />Tutorials</li>
+                    <li><input id="Reviews" type="checkbox" />Reviews</li>
+                    <li><input id="Resources" type="checkbox" />Resources</li>
+                    <li class="last">
+                        <img class="corner_left" alt="" src="nav/corner_left.png"/>
+                        <img class="middle" alt="" src="nav/dot.gif"/>
+                        <img class="corner_right" alt="" src="nav/corner_right.png"/>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        
+    </div>
+
+
+	<div id="eastNav"><a id="menunav" href="#eastCampus" onclick="eastCampus();" class="east"><img src="images/eastsign.png" height="225" width="42" alt="East Campus"></div>
+	<div id="mainNav"><a id="menunav" href="#mainCampus" onclick="mainCampus();" class="main"><img src="images/mainsign.png" height="42" width="240" alt="Main Campus"></div>
+	<div id="westNav"><a id="menunav" href="#westCampus" onclick="westCampus();" class="west"><img src="images/westsign.png" height="224" width="42" alt="West Campus"></div>
+
+</body>
+</html>
