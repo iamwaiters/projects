@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+  <name>academicbuildings.kml</name>
+	<Style id="sh_ylw-pushpin19">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff7faaff</color>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin16">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin18</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin14</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin16">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff7faaff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin11">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ffff5555</color>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin13">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin17</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin17</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin12">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff7faaff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin16">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff7faaff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin13">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff7faaff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin13">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ffffaa55</color>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin14">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin16</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin16</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin10">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ffffaa55</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin17">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff7faaff</color>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin8">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin15</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin10</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin6">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin5</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl7</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin17">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin11</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin11</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin12">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ffffaa55</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin14">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ffffaa55</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin17">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff7faaff</color>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin18">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin13</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin12</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin12">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin19</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin19</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin15">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin14</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin18</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin11">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ffff5555</color>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin5">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff7faaff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl7">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff7faaff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin19">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff7faaff</color>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin19">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin12</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin15</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin15">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ffffaa55</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin20">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff7faaff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin18">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ffffaa55</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin14">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ffffaa55</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin15">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ff7faaff</color>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin9">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin20</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin13</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin18">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff7f0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>ffffaa55</color>
+		</PolyStyle>
+	</Style>
+	<Folder>
+		<name>academicbuildings</name>
+		<open>1</open>
+		<GroundOverlay>
+			<name>WabashaRecCenter</name>
+			<Icon>
+				<href>C:/Users/rwaiters11/AppData/LocalLow/Google/GoogleEarth/WabashaHall.png</href>
+				<viewBoundScale>0.75</viewBoundScale>
+			</Icon>
+			<LatLonBox>
+				<north>44.04832470195191</north>
+				<south>44.04726368542621</south>
+				<east>-91.63568105346766</east>
+				<west>-91.63901761129675</west>
+				<rotation>0.04565305111343134</rotation>
+			</LatLonBox>
+		</GroundOverlay>
+		<GroundOverlay>
+			<name>Facilities</name>
+			<Icon>
+				<href>C:/Users/rwaiters11/AppData/LocalLow/Google/GoogleEarth/Facilities_0.png</href>
+				<viewBoundScale>0.75</viewBoundScale>
+			</Icon>
+			<LatLonBox>
+				<north>44.0458271394577</north>
+				<south>44.04449035410575</south>
+				<east>-91.64336545006326</east>
+				<west>-91.64539668229268</west>
+				<rotation>-1.96369496774771</rotation>
+			</LatLonBox>
+		</GroundOverlay>
+		<GroundOverlay>
+			<name>Greenhouse</name>
+			<Icon>
+				<href>C:/Users/rwaiters11/AppData/LocalLow/Google/GoogleEarth/Greenhouse_0.png</href>
+				<viewBoundScale>0.75</viewBoundScale>
+			</Icon>
+			<LatLonBox>
+				<north>44.04470913991072</north>
+				<south>44.04340741476021</south>
+				<east>-91.6425770819385</east>
+				<west>-91.64586246160457</west>
+			</LatLonBox>
+		</GroundOverlay>
+		<Placemark>
+			<name>Watkins Hall</name>
+			<description><![CDATA[<div class='box-title'><strong>Watkins Hall</strong></div><div><img height='110' width='255'' src=''></div><div class='box-copy'><font size=2>222 W. Howard Street<br /><br />Departments:<br /><a target='_blank' href='http://www.winona.edu/arts/watkins.asp'>Paul Watkins Gallery</a><br />Art<br />Computer Science</font></div>]]></description>
+			<styleUrl>#m_ylw-pushpin6</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64465227178015,44.04814527856996,0 -91.64448121714497,44.04809518727701,0 -91.64449878309722,44.04806692819192,0 -91.64435430439575,44.04802623206805,0 -91.64432803661907,44.04805762080772,0 -91.64421863333122,44.04803259765037,0 -91.64405235697437,44.04833999337097,0 -91.64448122924365,44.04845915627217,0 -91.64465227178015,44.04814527856996,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Science Laboratory Center</name>
+			<description><![CDATA[<div class='box-title'><strong>Science Lab Center (SLC)</strong></div><div><img height='110' width='255'' src=''></div><div class='box-copy'><font size=2>400 Winona Street<br />Science academic, lab space<br /><br />Departments:<br />SLC Lecture Hall<br /><a target='_blank' href='http://www.winona.edu/college_science/index.asp'>College of Science & Engineering</a></font></div>]]></description>
+			<styleUrl>#m_ylw-pushpin6</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64440280759368,44.04857526465155,0 -91.64416640346821,44.04851874697071,0 -91.64411392631583,44.04856264967954,0 -91.64364665059495,44.04848736299848,0 -91.64357691894813,44.04863160015137,0 -91.64340266979113,44.04858148770847,0 -91.64331490000524,44.04875062103139,0 -91.64376876006966,44.04889806222541,0 -91.6437600431333,44.04892001095592,0 -91.64389523566118,44.04896075205326,0 -91.64377298456917,44.0492020698996,0 -91.64387727798639,44.04922690199631,0 -91.64386421739671,44.04925198523905,0 -91.643986596727,44.04927723547318,0 -91.64400403440084,44.04923961812548,0 -91.64404370798155,44.04925240099987,0 -91.64440280759368,44.04857526465155,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Pasteru Hall</name>
+			<description><![CDATA[<div class='box-title'><strong>Pasteur Hall</strong></div><div><img height='110' width='255'' src=''></div><div class='box-copy'><font size=2>203 W. Sanborn Street<br />Science academic, lab space<br /><br />Departments:<br /><a target='_blank' href='http://www.winona.edu/college_science/index.asp'>College of Science & Engineering</a><br />Biology<br />Chemistry<br />Geoscience<br />Physics</font></div>]]></description>
+			<styleUrl>#m_ylw-pushpin6</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.6439173722181,44.04795111877801,0 -91.64368252541614,44.04788175372107,0 -91.64335476112584,44.04855327762388,0 -91.64357691894813,44.04863160015137,0 -91.6439173722181,44.04795111877801,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Stark Hall</name>
+			<description><![CDATA[<div class='box-title'><strong>Stark Hall</strong></div><div><img height='110' width='255'' src=''></div><div class='box-copy'><font size=2>390 Winona Street<br />Nursing, engineering academic, lab space<br /><br />Departments:<br /><a target='_blank' href='http://www.winona.edu/college_nursing/conhs.html'>College of Nursing</a><br /><a target='_blank' href='http://www.winona.edu/engineering/'>Miller Brothers School of Engineering</a></font></div>]]></description>
+			<styleUrl>#m_ylw-pushpin6</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64376004348871,44.04892314621304,0 -91.64376440085704,44.04890119841372,0 -91.64331490143911,44.04875375581805,0 -91.64331928179136,44.04872869087338,0 -91.64317103472689,44.04868795778985,0 -91.64315352402483,44.04871926504867,0 -91.64311863346558,44.04871612779401,0 -91.64309243557423,44.0487317746744,0 -91.64306623541057,44.04875054825804,0 -91.64304875631204,44.04877244997385,0 -91.6430400263875,44.04882883524009,0 -91.64304875277257,44.04885704035952,0 -91.64306183059497,44.04887583861108,0 -91.64304443649479,44.04890721686454,0 -91.64309235074569,44.04892597286076,0 -91.64303152835544,44.049061007126,0 -91.64336294934716,44.04914873102933,0 -91.64339353281071,44.04908922464749,0 -91.64353744425499,44.04913309517941,0 -91.64359849594825,44.04915189617191,0 -91.64364210829793,44.04916129843863,0 -91.64370766191752,44.04902031488923,0 -91.64384285557678,44.0490547843109,0 -91.64389523566118,44.04896075205326,0 -91.64376004348871,44.04892314621304,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Maxwell Hall</name>
+			<description><![CDATA[<div class='box-title'><strong>Maxwell Hall</strong></div><div><img height='110' width='255'' src=''></div><div class='box-copy'><font size=2>622 Johnson Street<br />Admissions, Maxwell One-Stop, NCPTC<br /><br />Departments:<br /><a target='_blank' href='http://www.winona.edu/admissions/'>Admissions</a><br /><a target='_blank' href='http://www.winona.edu/warriorhub/'>Warrior Hub:</a><br /><a target='_blank' href='http://www.winona.edu/financialaid/index.asp'>Financial Aid</a><br /><a target='_blank' href='http://www.winona.edu/registrar/'>Registrar's Office</a><br /><a target='_blank' href='http://www.winona.edu/campuscard/'>Student Accounts/Campus Card</a><br />Advising Services<br />Career Services<br /><a target='_blank' href='http://www.winona.edu/disabilityservices/index.html'>Disability Services</a><br />Teaching & Learning Technology Services<br /><a target='_blank' href='http://www.winona.edu/graduatestudy/default.html'>Graduate Studies</a><br />Grants & Sponsored Projects<br />Health Education<br />Health, Exercise & Rehabilitative Sciences<br /><a target='_blank' href='http://www.ncptc.org/'>National Child Protection Training Center</a><br /><a target='_blank' href='http://www.winona.edu/parking/'>Parking Services</a><br />Veterans Services<br />Cardiac Rehabilitation Center</font></div>]]></description>
+			<styleUrl>#msn_ylw-pushpin19</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64234189253524,44.04861269904453,0 -91.64191044458444,44.04849674150074,0 -91.64188428939271,44.04856253900788,0 -91.64193219316854,44.04857507851199,0 -91.64182353618355,44.04878825843383,0 -91.64178868419725,44.0487788407679,0 -91.64175369029834,44.04884471345142,0 -91.64211931967685,44.04894500280909,0 -91.64217162301333,44.0488290391506,0 -91.6422377708672,44.04884158251113,0 -91.64234189253524,44.04861269904453,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Maxwell part II</name>
+			<description><![CDATA[<div class='box-title'><strong>Maxwell Hall</strong></div><div><img height='110' width='255'' src=''></div><div class='box-copy'><font size=2>622 Johnson Street<br />Admissions, Maxwell One-Stop, NCPTC<br /><br />Departments:<br /><a target='_blank' href='http://www.winona.edu/admissions/'>Admissions</a><br /><a target='_blank' href='http://www.winona.edu/warriorhub/'>Warrior Hub:</a><br /><a target='_blank' href='http://www.winona.edu/financialaid/index.asp'>Financial Aid</a><br /><a target='_blank' href='http://www.winona.edu/registrar/'>Registrar's Office</a><br /><a target='_blank' href='http://www.winona.edu/campuscard/'>Student Accounts/Campus Card</a><br />Advising Services<br />Career Services<br /><a target='_blank' href='http://www.winona.edu/disabilityservices/index.html'>Disability Services</a><br />Teaching & Learning Technology Services<br /><a target='_blank' href='http://www.winona.edu/graduatestudy/default.html'>Graduate Studies</a><br />Grants & Sponsored Projects<br />Health Education<br />Health, Exercise & Rehabilitative Sciences<br /><a target='_blank' href='http://www.ncptc.org/'>National Child Protection Training Center</a><br /><a target='_blank' href='http://www.winona.edu/parking/'>Parking Services</a><br />Veterans Services<br />Cardiac Rehabilitation Center</font></div>]]></description>
+			<styleUrl>#msn_ylw-pushpin8</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64275168371262,44.04874123236284,0 -91.64233751500221,44.04862837315955,0 -91.6422457494927,44.04884471856677,0 -91.64244633464469,44.04890116680608,0 -91.64246379736214,44.04888234382766,0 -91.6426208069704,44.04892936155553,0 -91.6426338884431,44.04890115411396,0 -91.64266441712125,44.04891055938708,0 -91.64267751121697,44.04887292717881,0 -91.64275168371262,44.04874123236284,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Performing Arts Center</name>
+			<description><![CDATA[<div class='box-title'><strong>Performing Arts Center</strong></div><div><img height='110' width='255'' src=''></div><div class='box-copy'><font size=2>460 Washington Street<br /><a target='_blank' href ='http://www.winona.edu/arts/'>Performing art academic, events center</a><br /><br />Departments:<br />Dorothy B. Magnus Open Stage Theatre<br />Main Stage Theatre<br />Recital Hall<br />Communications Studies<br />Dance<br />Music<br />Theatre</font></div>]]></description>
+			<styleUrl>#msn_ylw-pushpin8</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.6434582016463,44.04714753252249,0 -91.64338834525077,44.04712872315895,0 -91.6434712261804,44.04701583971237,0 -91.64348433463653,44.0470409209427,0 -91.64360222555665,44.04705028975361,0 -91.6436765547513,44.0468964047467,0 -91.64362421513131,44.04685868386338,0 -91.64347138861854,44.0468492901953,0 -91.64352843985795,44.04673896092465,0 -91.64304364687345,44.04660644619401,0 -91.64296930519248,44.04675487480197,0 -91.64293436651136,44.04674232639628,0 -91.64275111715639,44.04709145531445,0 -91.64278601512869,44.04710083937105,0 -91.64275113418808,44.04717304075706,0 -91.64335776531033,44.04734524405926,0 -91.6434582016463,44.04714753252249,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Phelp&apos;s Hall</name>
+			<description><![CDATA[<div class='box-title'><strong>Phelps Hall</strong></div><div><img height='110' width='255'' src=''></div><div class='box-copy'><font size=2>139 W. Sanborn Street<br />Liberal arts academic space<br /><br />Departments:<br /><a target='_blank' href='http://www.winona.edu/college_liberalarts/cola.htm'>College of Liberal Arts</a><br />Mass Communication<br />Psychology<br />KQAL-FM</font></div>]]></description>
+			<styleUrl>#msn_ylw-pushpin13</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64289057595822,44.0480632109203,0 -91.64287310454425,44.04804440208445,0 -91.64303444127859,44.04774352224057,0 -91.64306499251302,44.04774978467538,0 -91.6431042484226,44.04767769313531,0 -91.64282933538699,44.04759629462031,0 -91.64278135846554,44.04766210796739,0 -91.64283370897014,44.04767462715695,0 -91.64281627116368,44.04773103103103,0 -91.64274211059907,44.0477122475881,0 -91.64262874840978,44.04792844667896,0 -91.64268108702989,44.0479441118747,0 -91.64265492292671,44.04799737708166,0 -91.64262875453883,44.04798797666393,0 -91.64258078698383,44.04805063623562,0 -91.64286430251782,44.04813213641535,0 -91.64289057595822,44.0480632109203,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Somsen Hall</name>
+			<description><![CDATA[<div class='box-title'><strong>Somsen Hall</strong></div><div><img height='110' width='255'' src=''></div><div class='box-copy'><font size=2>133 W. Sanborn Street<br />University administration, academic space<br /><br />Departments:<br /><a target='_blank' href='http://www.winona.edu/colleges/cob.html'>College of Business</a><br /><a target='_blank' href='http://www.winona.edu/academics/'>Academic Affairs</a><br />Accounting<br /><a target='_blank' href='http://www.alumni.winona.edu/NetCommunity/Page.aspx?pid=207'>Alumni Relations</a><br />Business Administration MISO<br />Business Education<br />Business Office<br />Finance & Administrative Services<br />Fiscal Affairs<br />Foreign Languages<br /><a target='_blank' href='http://www.winona.edu/humanresources/'>Human Resources</a><br />Legal Affairs/Affirmative Action<br />Marketing<br /><a target='_blank' href='http://www.winona.edu/OCED/'>Outreach & Continuing Education</a><br /><a target='_blank' href='http://www.winona.edu/president/'>President's Office</a><br />Print Shop<br />Publications<br /><a target='_blank' href='http://www.winona.edu/arts/somsen.asp'>Somsen Auditorium</a><br /><a target='_blank' href='http://www.winona.edu/its/techsupport/'>Technical Support Center</a><br />University Marketing & Communications<br /><a target='_blank' href='http://www.alumni.winona.edu/NetCommunity/Page.aspx?&pid=247&srcid=207'>WSU Foundation</a><br />Mugby Junction</font></div>]]></description>
+			<styleUrl>#msn_ylw-pushpin13</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64253715465932,44.04753371199232,0 -91.64256324903998,44.04749303868795,0 -91.64212744331449,44.04737387760765,0 -91.6420925710424,44.04743646738075,0 -91.64182678997371,44.04736475155604,0 -91.64155635772207,44.04786265245087,0 -91.6417219388067,44.04791278107908,0 -91.64173935257279,44.0478877038614,0 -91.64196614319819,44.04794098639779,0 -91.64195743050982,44.0479660548074,0 -91.64218847992201,44.04802557749318,0 -91.64219283803593,44.04800364550052,0 -91.64239332668581,44.04805062955157,0 -91.64238896958315,44.04807255954257,0 -91.64247613848191,44.04809761910001,0 -91.64275081124666,44.04759945635259,0 -91.64253715465932,44.04753371199232,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Gildemeister Hall</name>
+			<description><![CDATA[<div class='box-title'><strong>Gildemeister Hall</strong></div><div><img height='110' width='255'' src=''></div><div class='box-copy'><font size=2>221 W. King Street<br />Education, mathematics academic space<br /><br />Departments:<br /><a target='_blank' href='http://www.winona.edu/college_education/COE.html'>College of Education</a><br />Counseling Center<br />Counseling Education<br />Mathematics & Statistics</font></div>]]></description>
+			<styleUrl>#msn_ylw-pushpin13</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.6449600316992,44.04754433211462,0 -91.64474138405787,44.04748162749198,0 -91.64464938578897,44.04763876804535,0 -91.64458805614061,44.04762004671472,0 -91.64460994259105,44.04757293858413,0 -91.64408593249652,44.0474257682082,0 -91.64398122078438,44.0476042746386,0 -91.64452666848702,44.04776136312143,0 -91.64455734060157,44.04770484668639,0 -91.64461866422661,44.04771730436686,0 -91.64457919949224,44.04780522354208,0 -91.64480272257738,44.04786469756453,0 -91.6449600316992,44.04754433211462,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Kryzsko Commons &amp; College</name>
+			<description><![CDATA[<div class='box-title'><strong>Kryzsko Commons</strong></div><div><img height='110' width='255'' src=''></div><div class='box-copy'><font size=2>250 W. Howard Street<br />Student union and activity center<br /><br />Departments:<br />Community Liaison<br />Dining Services<br />Greek Council & Student Club Office<br /><a target='_blank' href='http://youtu.be/XzpjyWFs6kg'>A Guided Tour: Kryzsko</a><br><a target='_blank' href='http://www.winona.edu/Housing/'>Housing & Residential Life</a><br /><a target='_blank' href='http://www.winona.edu/international/'>International Education</a><br />Office of Inclusion & Diversity<br /><a target='_blank' href='http://www.winona.edu/sld/default.asp'>Student Life & Development</a><br /><a target='_blank' href='http://www.winona.edu/src/'>Student Resource Center</a><br />Student Senate<br />Student Union<br />UPAC<br /><a target='_blank' href='http://www.wsubookstore.com/'>WSU Bookstore</a></font></div>]]></description>
+			<styleUrl>#msn_ylw-pushpin18</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64626721066473,44.04752460224003,0 -91.64624950485187,44.04745528788727,0 -91.64615763554409,44.04744897914635,0 -91.64615758828307,44.04743008268992,0 -91.64599573780745,44.04738604040114,0 -91.64600445434378,44.04736087355929,0 -91.64539648197733,44.04721243213516,0 -91.64542704449735,44.04716220268895,0 -91.6456058403125,44.04720575130497,0 -91.6456888875385,44.04705218148271,0 -91.64578520971661,44.04708378974217,0 -91.64579829068651,44.04704924282429,0 -91.64584657656312,44.04705883255056,0 -91.64585964795018,44.04702112604537,0 -91.64580260945637,44.04700840314267,0 -91.64583322627303,44.04694879103857,0 -91.64585950688118,44.04695510855271,0 -91.6458945054296,44.04687982360507,0 -91.64587268200643,44.04687665062127,0 -91.64588145900014,44.04685782619001,0 -91.64590772339268,44.04686412405768,0 -91.64593403745529,44.04681390616876,0 -91.64590783018888,44.04680762865188,0 -91.64592103700457,44.04677624260054,0 -91.64587296397539,44.04676368012046,0 -91.64586417482089,44.04677937418876,0 -91.64582918499467,44.04676994525227,0 -91.64587310882749,44.0467008731354,0 -91.6458206116279,44.04668516034348,0 -91.64578547237649,44.04674795755867,0 -91.64573292308008,44.04673853686531,0 -91.64574177301182,44.04671969146795,0 -91.64554508980912,44.04666315753903,0 -91.64551884608035,44.04669458228332,0 -91.64554935740347,44.04670398737057,0 -91.64554062377347,44.04672596973458,0 -91.64551447570788,44.04671342705518,0 -91.64550143530167,44.04674168647271,0 -91.64551881653668,44.04674796472416,0 -91.64535282916323,44.04706208428827,0 -91.64526107583107,44.04704331512401,0 -91.64522174247955,44.04709985340013,0 -91.64531786444263,44.04713743270022,0 -91.64529171537595,44.04716884717897,0 -91.64498586391238,44.04708712265516,0 -91.64496837140149,44.04712170382649,0 -91.64485913723051,44.04709029834324,0 -91.64486789981407,44.04707142267718,0 -91.64478034638843,44.04704961088063,0 -91.64474093766891,44.04711252137826,0 -91.6446621907601,44.04709058035097,0 -91.6445791485033,44.04726968526529,0 -91.64465790619428,44.04729160272089,0 -91.64462735937431,44.04735438255342,0 -91.6447193602317,44.04738861875026,0 -91.64473679697137,44.04736983579324,0 -91.64482848927153,44.04739195295856,0 -91.64481539802891,44.04740762325157,0 -91.64541407831344,44.04757391159814,0 -91.64540098252188,44.04759281501988,0 -91.64547969447115,44.04761502207128,0 -91.64548406184463,44.04759616656722,0 -91.64581660958504,44.04768793851329,0 -91.64582535799164,44.04766908352626,0 -91.64590417921346,44.0476943839513,0 -91.64598297649037,44.04771647968305,0 -91.64603113610011,44.04771653420181,0 -91.64626721066473,44.04752460224003,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Minne Hall</name>
+			<description><![CDATA[<div class='box-title'><strong>Minne Hall</strong></div><div><img height='110' width='255'' src=''></div><div class='box-copy'><font size=2>207 W. Howard Street<br />Liberal arts academic space<br /><br />Departments:<br /><a target='_blank' href='http://www.winona.edu/college_liberalarts/cola.htm'>College of Liberal Arts</a><br />Criminal Justice<br />English<br /><a target='_blank' href='http://www.winona.edu/elc/'>English Language Center</a><br />Geography<br />Global Studies<br />History<br />Law and Society<br />Paralegal<br />Philosophy<br />Political Science<br />Social Work<br />Sociology<br />Women's and Gender Studies<br /><a target='_blank' href='http://www.winona.edu/writingcenter/'>Writing Center</a></font></div>]]></description>
+			<styleUrl>#msn_ylw-pushpin14</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64502397746348,44.04657833224923,0 -91.64506867879875,44.04659057561093,0 -91.64516453951933,44.04641933690019,0 -91.64451808122054,44.04623911347975,0 -91.64436749016194,44.04652258018717,0 -91.64440194573234,44.04653164710499,0 -91.64446423099858,44.04654664906887,0 -91.64445996864633,44.04655584326738,0 -91.64450697797264,44.04658475902165,0 -91.64470934988039,44.04663833469238,0 -91.64471993502875,44.04661984170416,0 -91.64491583734852,44.04667188821725,0 -91.64493694211421,44.04663349443705,0 -91.64498799538634,44.04664418619741,0 -91.64502397746348,44.04657833224923,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Darrell W Krueger Library</name>
+			<description><![CDATA[<div class='box-title'><strong>Integrated Wellness Complex</strong></div><div><img height='110' width='255'' src=''></div><div class='box-copy'><font size=2>117 W. Sanborn Street<br />Student health services, fitness, recreation<br /><br />Departments:<br />Counseling Center<br /><a target='_blank' href='http://www.winona.edu/healthservices/'>Student Health Services</a><br><a target='_blank' href='http://youtu.be/xhLUej77GCU'>A Guided Tour: Integrated Wellness Complex</a><br />Fitness Center<br />Intercollegiate Athletics<br />Intramurals<br />Health, Exercise, Rehabilitative Sciences</a></font></div>]]></description>
+			<styleUrl>#msn_ylw-pushpin9</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64376882936227,44.04581905956275,0 -91.64376882020063,44.04582491436462,0 -91.64372005320523,44.04580733231275,0 -91.643687463254,44.04587755084359,0 -91.64363459235349,44.04586877982113,0 -91.64355325102649,44.04589801534214,0 -91.64353291638571,44.04592725010151,0 -91.643427168459,44.04590092490911,0 -91.64326445301084,44.04621377734573,0 -91.64336616659173,44.04624299800529,0 -91.64334989274249,44.04627224426557,0 -91.64337836718906,44.0463336560852,0 -91.6434353204793,44.04634826418995,0 -91.64339870685632,44.04642725672535,0 -91.64345159649257,44.04643893673177,0 -91.64343532416747,44.04646234776863,0 -91.64362246964336,44.04651789412211,0 -91.64363467134703,44.04650034312557,0 -91.64371601533179,44.04652077506733,0 -91.6437526143493,44.04645351253243,0 -91.64378107960704,44.04646519618807,0 -91.6438380145664,44.04647980030477,0 -91.64389501487315,44.04645937844282,0 -91.64391943981899,44.0464009102137,0 -91.64400902084766,44.04642142316362,0 -91.64419590349792,44.04611140844538,0 -91.64406977725251,44.04607925349518,0 -91.64408604309837,44.04605294297562,0 -91.64404942393489,44.04598570916238,0 -91.64400468221157,44.04597109477182,0 -91.64404535775175,44.04589216222511,0 -91.64397135136002,44.04587771343422,0 -91.64398124814102,44.04585119066535,0 -91.64378105959587,44.04579856925785,0 -91.64376882936227,44.04581905956275,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Sustainability Theme House</name>
+			<description><![CDATA[<div class='box-title'><strong>Sustainability Theme House</strong></div><div><img height='110' width='255'' src=''></div><div class='box-copy'><font size=2>366 E Main<br />Winona, MN 55987<br /><br />Departments:<br />Housing<br /><a target='_blank' href='http://www.winona.edu/housing/theme.asp'>FAQ</a><br><a target='_blank' href='http://www.winona.edu/housing/faq.asp'>FAQ</a><br />Fitness Center<br />Intercollegiate Athletics<br />Intramurals<br />Health, Exercise, Rehabilitative Sciences</a></font></div>]]></description>
+			<styleUrl>#msn_ylw-pushpin12</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64079285808266,44.04820205019674,0 -91.64080261347621,44.04818323121613,0 -91.64076621830168,44.04817342066329,0 -91.64077601879352,44.04815573006132,0 -91.64056049288726,44.04810175589292,0 -91.64052077526159,44.04817882436982,0 -91.64058073896811,44.04819572503576,0 -91.64057228132782,44.04821738402139,0 -91.64084251266013,44.04828467460547,0 -91.64087383076942,44.04822380263214,0 -91.64079285808266,44.04820205019674,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Main St House II</name>
+			<styleUrl>#msn_ylw-pushpin16</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.6409645381471,44.04831868605216,0 -91.64097987758071,44.04829505752073,0 -91.64100310584627,44.04825779199366,0 -91.64101416809794,44.0482311625621,0 -91.64102159110644,44.04818675379899,0 -91.6409259688031,44.04816103419712,0 -91.64091574099723,44.04818503852141,0 -91.6408961773131,44.04818057432162,0 -91.64085001309176,44.04828748701101,0 -91.64087380471878,44.0482950031306,0 -91.64093039794697,44.04831039591667,0 -91.6409645381471,44.04831868605216,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Memorial Hall</name>
+			<description><![CDATA[<div class='box-title'><strong>Memorial Hall</strong></div><div><img height='110' width='255'' src=''></div><div class='box-copy'><font size=2>131 W. Sanborn Street<br />Athletics events center, recreation<br /><br />Departments:<br /><a target='_blank' href='http://www.winonastatewarriors.com/'>McCown Gymnasium</a><br />Talbot Gymnasium<br />Intramural Office<br />Physical Education & Sport Science<br />Recreation, Tourism & Therapeutic<br />Recreation</font></div>]]></description>
+			<styleUrl>#msn_ylw-pushpin15</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64138789281608,44.04655345006305,0 -91.64092851049344,44.04736975663021,0 -91.64088740552676,44.0473605626999,0 -91.64074186338536,44.04764451578491,0 -91.64117729436751,44.04776650755387,0 -91.64119051885021,44.04771335819648,0 -91.64140606309707,44.04777742618231,0 -91.64143832777883,44.0477703069871,0 -91.64158638344679,44.04781473348295,0 -91.64162057321715,44.04775317037002,0 -91.64151374454085,44.04772116189511,0 -91.64160549898068,44.0475586655878,0 -91.64166411022357,44.04758087474743,0 -91.64173968590373,44.04737286862078,0 -91.64166050046511,44.04734651709263,0 -91.64173821155424,44.04717635468012,0 -91.64175110277829,44.04714910288346,0 -91.64177096245579,44.04711248384942,0 -91.64195855173459,44.04671103023331,0 -91.64138789281608,44.04655345006305,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>Integrated Wellness Complex</name>
+			<description><![CDATA[<div class='box-title'><strong>Integrated Wellness Complex</strong></div><div><img height='110' width='255'' src=''></div><div class='box-copy'><font size=2>117 W. Sanborn Street<br />Student health services, fitness, recreation<br /><br />Departments:<br />Counseling Center<br /><a target='_blank' href='http://www.winona.edu/healthservices/'>Student Health Services</a><br />Fitness Center<br />Intercollegiate Athletics<br />Intramurals<br />Health, Exercise, Rehabilitative Sciences</a></font></div>]]></description>
+			<styleUrl>#msn_ylw-pushpin17</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-91.64184443102394,44.04720196320785,0 -91.64193497078911,44.04722228935486,0 -91.64216258255657,44.04674956872636,0 -91.64234759740403,44.0463596993906,0 -91.64233076770699,44.04634528209021,0 -91.64231384729034,44.04632069585981,0 -91.64228825659784,44.04630028616379,0 -91.6422397524029,44.04629228186339,0 -91.64217747029403,44.04625941864406,0 -91.64165465754984,44.04612273880503,0 -91.64163761740126,44.0461452456284,0 -91.64161205919852,44.04613712813899,0 -91.64152164828249,44.0463139234146,0 -91.64154716330728,44.0463282490965,0 -91.64151023002349,44.04639721083129,0 -91.64193820979727,44.04651320088965,0 -91.64184549006379,44.04668041770844,0 -91.64196175659443,44.04671307213418,0 -91.64170291147872,44.04724674312778,0 -91.64180752257767,44.04727106784215,0 -91.64184443102394,44.04720196320785,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>
