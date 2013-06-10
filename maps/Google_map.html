@@ -1,0 +1,303 @@
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>WSU Campus Map</title>
+<link href="map.css" rel="stylesheet">
+<script type="text/javascript" id="googleLang" src="http://maps.google.com/maps/api/js?libraries=weather&sensor=false&language=en"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+google.load("map", "3",  {other_params:"sensor=false"});
+  var map;
+  
+  var kmlLayer = null;
+  var trafficLayer = null;
+	var weatherLayer = null;
+	var currentLayer = null;
+	var educationLayer = null;
+	var residentsLayer = null;
+	var parkingLayer = null;
+	var sportsLayer = null;
+	var callblueLayer = null;
+  
+  
+  
+  function initialize() {
+    var myLatlng = new google.maps.LatLng(44.047429,-91.643754);
+    var myOptions = {
+      zoom: 17,
+      center: myLatlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+
+    }
+    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    
+    trafficLayer = new google.maps.TrafficLayer();
+    weatherLayer = new google.maps.weather.WeatherLayer({temperatureUnits: google.maps.weather.TemperatureUnit.FAHRENHEIT});
+	var cloudLayer = new google.maps.weather.CloudLayer();
+	currentLayer.setMap(map);
+
+
+  
+  }
+  
+  function reloadPage() {
+	window.location.reload()
+  }
+  
+    function mainCampus() {
+    map.setCenter(new google.maps.LatLng(44.047429,-91.643754));
+    map.setZoom(17);
+  }
+  
+   function westCampus() {
+    map.setCenter(new google.maps.LatLng(44.051137,-91.670405));
+    map.setZoom(17);
+  }
+  
+   function eastCampus() {
+    map.setCenter(new google.maps.LatLng(44.041883,-91.634672));
+    map.setZoom(17);
+  }
+
+  function traffic() {
+  if(document.getElementById("trafButton").checked) {
+	trafficLayer.setMap(map);
+	currentLayer = trafficLayer.setMap;
+  } else {
+	 trafficLayer.setMap(null);
+	}
+  }
+  
+  function weather() {
+	if(document.getElementById("weatButton").checked){
+     weatherLayer.setMap(map);
+	  map.setZoom(12);
+    currentLayer = weatherLayer.setMap;
+	} else {
+		  weatherLayer.setMap(null);
+	}
+  }
+  
+  
+ function education() {
+	if(document.getElementById("eduButton").checked) {
+	url = "https://xwebdev.winona.edu/webteam/ric/kmz/academicbuildings.kmz";
+	educationLayer = new google.maps.KmlLayer(url, {map: map});
+    currentLayer = educationLayer;
+	} else {
+		educationLayer.setMap(null);
+
+	}
+
+}
+
+function residents() {
+	if(document.getElementById("resButton").checked){
+	url = "https://xwebdev.winona.edu/webteam/ric/kmz/residents.kmz";
+	residentsLayer = new google.maps.KmlLayer(url, {map: map});
+    currentLayer = residentsLayer;
+	} else {
+		residentsLayer.setMap(null);
+	}
+
+}
+
+function parking() {
+	if(document.getElementById("parButton").checked) {
+	url = "https://xwebdev.winona.edu/webteam/ric/kmz/parking.kmz";
+	parkingLayer = new google.maps.KmlLayer(url, {map: map});
+    currentLayer = parkingLayer;
+	} else {
+		parkingLayer.setMap(null);
+	}
+
+}
+
+function sports() {
+	if(document.getElementById("sporButton").checked) {
+	url = "https://xwebdev.winona.edu/webteam/ric/kmz/athleticfields.kmz";
+	sportsLayer = new google.maps.KmlLayer(url, {map: map});
+    currentLayer = sportsLayer;
+	} else {
+		sportsLayer.setMap(null);
+	}
+}
+
+  
+  function kmlKeyUp(e) {
+    var keyCode;
+  
+    if (window.event) {
+        keyCode = window.event.keyCode;
+    } else if (variable) {
+        keyCode = e.which;
+    }
+  
+    if (keyCode == 13) {
+        document.getElementById("kmlUrl").blur();
+        document.getElementById("kmlButton").click();
+    }
+  
+
+  
+  }
+  
+  function lang(actLang) {
+
+	var oldScript = document.getElementById('googleLang');
+	var script1 = document.createElement('http://maps.google.com/maps/api/js?libraries=weather&sensor=false&language=zh-CN');
+		script1.setAttribute("type","text/javascript");                
+		script1.setAttribute("id","someID");
+		script1.setAttribute("src",url);
+
+	var script2 = document.createElement('http://maps.google.com/maps/api/js?libraries=weather&sensor=false&language=ar');
+	script.setAttribute("type","text/javascript");                
+script.setAttribute("id","someID");
+script.setAttribute("src",url);
+
+	var script3 = document.createElement('http://maps.google.com/maps/api/js?libraries=weather&sensor=false&language=ar');
+	script.setAttribute("type","text/javascript");                
+script.setAttribute("id","someID");
+script.setAttribute("src",url);
+ 
+
+	if(actLang = 3)
+		{}
+	else if(actLang = 2)
+		{map_element.src = 'http://maps.google.com/maps/api/js?libraries=weather&sensor=false&language=ar';}
+	else
+		{map_element.src = 'http://maps.google.com/maps/api/js?libraries=weather&sensor=false&language=en';}
+	map_element.type = "text/javascript"
+	map_element.id = "googlelang";
+	document.getElementsByTagName("head")[0].appendChild(map_element);
+  }
+  
+  function detectBrowser() {
+  var useragent = navigator.userAgent;
+  var mapdiv = document.getElementById("map_canvas");
+
+  if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1 ) {
+    body.style.width = '100%';
+    body.style.height = '100%';
+  } else {
+    body.style.width = '600px';
+    body.style.height = '800px';
+  }
+}
+
+
+</script>
+
+</head>
+<body style="margin:0px; padding:0px;" onload="initialize()">
+<div id="wrapper">
+<div id="map_canvas"></div>
+<div id="accDeal">
+<ul id="accordion">
+	<li><a href="javascript:tabSwitch_2(1, 3, 'tab_', 'content_');" id="tab_1" >Maps</a></li>
+	<ul>
+		<li><a href="#">
+		<table style="color: black">
+							<tr>
+							  <td><input onclick="weather()" type="checkbox" name="weatlayer" id="weatButton" value="weather"/></td>
+							  <td align="left">Weather</td>
+							</tr>
+							<tr>
+							  <td><input onclick="traffic()" type="checkbox" name="layer" id="trafButton" value="traffic"/></td>
+							  <td align="left">Traffic</td>
+							</tr>
+							<tr>
+							<tr>
+							  <td><input onclick="clearOverlays()" type="checkbox" name="layer" id="eduButton" value="education"/></td>
+							  <td align="left">Clear Overlays</td>
+							</tr>
+							<tr>
+							  <td><input onclick="residents()" type="checkbox" name="res" id="resButton" value="residents"/></td>
+							  <td align="left">Residents Halls</td>
+							</tr>
+							<tr>
+							  <td><input onclick="parking()" type="checkbox" name="layer" id="parButton" value="parking"/></td>
+							  <td align="left">Parking Spaces</td>
+							</tr>
+							 <tr>
+							  <td><input onclick="sports()" type="checkbox" name="layer" id="sporButton" value="sports"/></td>
+							  <td align="left">Sports Faciluties</td>
+							</tr>
+							<tr>
+							  <td><input onclick="clearLayer()" type="checkbox" name="layer" id="calButton" value="callblue"/></td>
+							  <td align="left">Call Blue Locations</td>
+							</tr>
+
+						</table>
+		</a></li>
+
+	</ul>
+	<li><a href="javascript:tabSwitch_2(2, 3, 'tab_', 'content_');" id="tab_2">Legend</a></li>
+	<ul id="accordion">
+		<li><a href="#"> 
+						<table  style="color: black">
+							<tr>
+								<td id="gold" width="30" bgcolor="gold"></td>
+								<td align="center" >Gold Parking</td>
+							</tr>
+							<tr>
+								<td id="silver" width="30" bgcolor="silver"></td>
+								<td align="center">Silver Parking</td>
+							</tr>
+							<tr>
+								<td id="purple" width="30" bgcolor="purple"></td>
+								<td align="center">Purple Parking</td>
+							</tr>
+							<tr>
+								<td id="yellow" width="30" bgcolor="yellow"></td>
+								<td align="center">Cycle Parking</td>
+							</tr>
+							<tr>
+								<td id="marron" width="30" bgcolor="red"></td>
+								<td align="center">Metered Parking</td>
+							</tr>
+							<tr>
+								<td id="bus"><img src="images/bus.png" width="30" height="40" alt="Winona Logo"></td>
+								<td align="center">Shuttle Bus Stop</td>
+							</tr>
+							<tr>
+								<td id="courtesy"><img src="images/phone.png" width="30" height="40" alt="Winona Logo"></td>
+								<td align="center">Courtesy Phone</td>
+							</tr>
+							<tr>
+								<td id="emergency"><img src="images/codeBlue.png" width="30" height="40" alt="Winona Logo"></td>
+								<td align="center">Call Blues</td>
+							</tr>
+					  </table >  
+
+		</a></li>
+
+	</ul>
+			<li><a href="javascript:tabSwitch_2(3, 3, 'tab_', 'content_');" id="tab_3">Pages</a></li> 
+				<ul id="accordion">  
+					<li><a href="#"> <iframe id="easteregg" width="150" height="100"></iframe></a>  
+				</ul>
+			</li>
+</div>
+
+<div id="eastNav"><a id="menunav" href="#eastCampus" onclick="eastCampus();" class="east"><img src="images/eastsign.png" height="225" width="50" alt="East Campus"></div>
+<div id="mainNav"><a id="menunav" href="#mainCampus" onclick="mainCampus();" class="main"><img src="images/mainsign.png" height="50" width="240" alt="Main Campus"></div>
+<div id="westNav"><a id="menunav" href="#westCampus" onclick="westCampus();" class="west"><img src="images/westsign.png" height="224" width="50" alt="West Campus"></div>
+
+<div id="footer">
+</div>
+<SCRIPT>
+$("#accordion > li").click(function(){
+
+	if(false == $(this).next().is(':visible')) {
+		$('#accordion > ul').slideUp(300);
+	}
+	$(this).next().slideToggle(300);
+});
+
+$('#accordion > ul:eq(0)').show();
+
+</SCRIPT>
+</body>
+</html>
