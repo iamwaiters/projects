@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>WSU Map</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"/>
+<!-- enable full-screen mode -->
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<!-- controls the appearance of the status bar in full-screen mode -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<link rel="stylesheet" media="all" href="demo.css" />
+<link rel="stylesheet" media="all" href="slidefast.css" />
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script> 
+
+<script type="text/javascript">
+  
+  function addPolygonClick(poly,html) {
+
+	
+
+    var infowindow = new google.maps.InfoWindow(
+    { 
+        content: html,
+		maxWidth: 255
+		
+		
+    });
+
+    google.maps.event.addListener(poly,'click', function(event) {
+		var point = event.latLng;
+		infowindow.setPosition(point);
+        this.setOptions({fillColor: "#000000"});
+        infowindow.open(map);
+    }); 
+
+}
+
+function addPolymouseover(polyshape) {
+	 google.maps.event.addListener(polyshape, 'mouseover', function() {
+  polyshape.setOptions({
+  fillColor: '#48036F',
+  strokeColor: '#48036F'
+  });
+  });
+  
+  google.maps.event.addListener(polyshape, 'mouseout', function(e) {
+		polyshape.setOptions({
+			fillColor: '#ff0000',
+			strokeColor: '#48036F'
+		});
+	}); 
+ 
+
+}
+
+
+
+
+  
+  function initialize() {
+  
+  
+  
+ 
+  
+  var kmlLayer = null;
+	var trafficLayer = null;
+	var weatherLayer = null;
+	var currentLayer = null;
+	var educationLayer = null;
+	var residentsLayer = null;
+	var parkingLayer = null;
+	var sportsLayer = null;
+	var callblueLayer = null;
+	var labelText = "City Hall";
+    var myLatlng = new google.maps.LatLng(44.047429,-91.643754);
+	var MY_MAPTYPE_ID = 'custom_style';
+	
+	var featureOpts = [
+    {
+      stylers: [
+        { hue: '#BBBBBB' },
+        { visibility: 'simplified' },
+        { gamma: 0.5 },
+        { weight: 0.5 }
+      ]
+    },
+    {
+      featureType: 'poi.school',
+      stylers: [
+        { color: '#BBBBBB' }
+	  
+      ]
+    },
+    {
+      featureType: 'water',
+      stylers: [
+        { color: '#8831B7' }
+	  
+      ]
+    }
+  ];
+	
+    var myOptions = {
+      zoom: 15,
+      center: myLatlng,
+      /* mapTypeId: google.maps.MapTypeId.ROADMAP */
+	  mapTypeControlOptions: {
+      mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
+    },
+    mapTypeId: MY_MAPTYPE_ID
+	
+    };
+    map = new google.maps.Map(document.getElementById("home-page"), myOptions);
+ 
+	 var styledMapOptions = {
+    name: 'WSU Style'
+  };
+
+  var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
+
+  map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
+	var eastcmpDPoint = [
+new google.maps.LatLng(44.041730,-91.634155),
+new google.maps.LatLng(44.041698,-91.634055),
+new google.maps.LatLng(44.041717,-91.634042),
+new google.maps.LatLng(44.041723,-91.634055),
+new google.maps.LatLng(44.041773,-91.634031),
+new google.maps.LatLng(44.041771,-91.634015),
+new google.maps.LatLng(44.041807,-91.633988),
+new google.maps.LatLng(44.041815,-91.634004),
+new google.maps.LatLng(44.041858,-91.633986),
+new google.maps.LatLng(44.041856,-91.633967),
+new google.maps.LatLng(44.041890,-91.633948),
+new google.maps.LatLng(44.041836,-91.633771),
+new google.maps.LatLng(44.041815,-91.633787),
+new google.maps.LatLng(44.041800,-91.633734),
+new google.maps.LatLng(44.041430,-91.633927),
+new google.maps.LatLng(44.041478,-91.634106),
+new google.maps.LatLng(44.041501,-91.634098),
+new google.maps.LatLng(44.041518,-91.634157),
+new google.maps.LatLng(44.041559,-91.634133),
+new google.maps.LatLng(44.041563,-91.634147),
+new google.maps.LatLng(44.041613,-91.634120),
+new google.maps.LatLng(44.041611,-91.634101),
+new google.maps.LatLng(44.041636,-91.634088),
+new google.maps.LatLng(44.041665,-91.634192),
+new google.maps.LatLng(44.041726,-91.634157)
+];
+
+var eastlake_d = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;East Lake D</strong><br /><br /><img src='images/east_lake.jpg'></div><div style='padding: 0px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;640 Franklin Street<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/housing/6214.asp'>Coed residence hall</a></font></div>";	  
+
+var  eastcmpDShape = new google.maps.Polygon({
+	paths:  eastcmpDPoint,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#9F3ED5',
+	fillOpacity: 0.35
+  });
+ addPolymouseover(eastcmpDShape);
+ addPolygonClick(eastcmpDShape,eastlake_d);
+ 
+	
+	
+var eastcmpCPoint = [
+new google.maps.LatLng(44.041987,-91.634313),
+new google.maps.LatLng(44.041939,-91.634133),
+new google.maps.LatLng(44.041752,-91.634230),
+new google.maps.LatLng(44.041726,-91.634160),
+new google.maps.LatLng(44.041667,-91.634195),
+new google.maps.LatLng(44.041686,-91.634265),
+new google.maps.LatLng(44.041565,-91.634334),
+new google.maps.LatLng(44.041578,-91.634385),
+new google.maps.LatLng(44.041557,-91.634404),
+new google.maps.LatLng(44.041609,-91.634578),
+new google.maps.LatLng(44.041645,-91.634560),
+new google.maps.LatLng(44.041653,-91.634570),
+new google.maps.LatLng(44.041701,-91.634544),
+new google.maps.LatLng(44.041699,-91.634530),
+new google.maps.LatLng(44.041757,-91.634493),
+new google.maps.LatLng(44.041769,-91.634514),
+new google.maps.LatLng(44.041827,-91.634471),
+new google.maps.LatLng(44.041827,-91.634460),
+new google.maps.LatLng(44.041881,-91.634426),
+new google.maps.LatLng(44.041890,-91.634447),
+new google.maps.LatLng(44.041940,-91.634417),
+new google.maps.LatLng(44.041939,-91.634401),
+new google.maps.LatLng(44.041983,-91.634377),
+new google.maps.LatLng(44.041967,-91.634329),
+new google.maps.LatLng(44.041985,-91.634318)
+];
+var  eastcmpCShape = new google.maps.Polygon({
+	paths:  eastcmpCPoint,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#9F3ED5',
+	fillOpacity: 0.35
+  });
+  
+  
+  
+  addPolymouseover(eastcmpCShape);
+ 
+var eastlake_c = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;East Lake C</strong><br /><br /><img src='images/east_lake.jpg'></div><div style='padding: 0px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;636 Franklin Street<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/housing/6214.asp'>Coed residence hall</a></font></div>";
+
+addPolygonClick(eastcmpCShape,eastlake_c); 	
+	
+var eastcmpBPoint = [
+new google.maps.LatLng(44.042066,-91.635061),
+new google.maps.LatLng(44.042052,-91.635018),
+new google.maps.LatLng(44.042058,-91.635005),
+new google.maps.LatLng(44.042041,-91.634943),
+new google.maps.LatLng(44.042025,-91.634949),
+new google.maps.LatLng(44.042016,-91.634911),
+new google.maps.LatLng(44.042023,-91.634898),
+new google.maps.LatLng(44.042006,-91.634822),
+new google.maps.LatLng(44.041994,-91.634828),
+new google.maps.LatLng(44.041991,-91.634804),
+new google.maps.LatLng(44.042043,-91.634772),
+new google.maps.LatLng(44.042018,-91.634694),
+new google.maps.LatLng(44.041964,-91.634726),
+new google.maps.LatLng(44.041952,-91.634688),
+new google.maps.LatLng(44.041962,-91.634683),
+new google.maps.LatLng(44.041942,-91.634611),
+new google.maps.LatLng(44.041931,-91.634621),
+new google.maps.LatLng(44.041919,-91.634554),
+new google.maps.LatLng(44.041875,-91.634581),
+new google.maps.LatLng(44.041867,-91.634546),
+new google.maps.LatLng(44.041742,-91.634616),
+new google.maps.LatLng(44.041800,-91.634820),
+new google.maps.LatLng(44.041796,-91.634825),
+new google.maps.LatLng(44.041813,-91.634903),
+new google.maps.LatLng(44.041829,-91.634903),
+new google.maps.LatLng(44.041888,-91.635118),
+new google.maps.LatLng(44.041925,-91.635101),
+new google.maps.LatLng(44.041939,-91.635134),
+new google.maps.LatLng(44.042064,-91.635067)
+];
+var  eastcmpBShape = new google.maps.Polygon({
+	paths:  eastcmpBPoint,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#9F3ED5',
+	fillOpacity: 0.35
+  });
+  
+  
+  
+ addPolymouseover(eastcmpBShape);
+var eastlake_b = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;East Lake B</strong><br /><br /><img src='images/east_lake.jpg'></div><div style='padding: 0px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;634 Franklin Street<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/housing/6214.asp'>Coed residence hall</a></font></div>";
+
+addPolygonClick(eastcmpBShape,eastlake_b); 
+	
+	var eastcmpAPoint = [
+new google.maps.LatLng(44.042286,-91.635332),
+new google.maps.LatLng(44.042235,-91.635160),
+new google.maps.LatLng(44.042207,-91.635174),
+new google.maps.LatLng(44.042197,-91.635168),
+new google.maps.LatLng(44.042158,-91.635190),
+new google.maps.LatLng(44.042156,-91.635201),
+new google.maps.LatLng(44.042047,-91.635252),
+new google.maps.LatLng(44.042021,-91.635185),
+new google.maps.LatLng(44.041962,-91.635217),
+new google.maps.LatLng(44.041983,-91.635297),
+new google.maps.LatLng(44.041929,-91.635324),
+new google.maps.LatLng(44.041919,-91.635308),
+new google.maps.LatLng(44.041861,-91.635340),
+new google.maps.LatLng(44.041879,-91.635399),
+new google.maps.LatLng(44.041858,-91.635407),
+new google.maps.LatLng(44.041906,-91.635582),
+new google.maps.LatLng(44.041942,-91.635563),
+new google.maps.LatLng(44.041950,-91.635574),
+new google.maps.LatLng(44.042002,-91.635549),
+new google.maps.LatLng(44.041996,-91.635536),
+new google.maps.LatLng(44.042062,-91.635504),
+new google.maps.LatLng(44.042072,-91.635523),
+new google.maps.LatLng(44.042122,-91.635498),
+new google.maps.LatLng(44.042118,-91.635480),
+new google.maps.LatLng(44.042181,-91.635455),
+new google.maps.LatLng(44.042187,-91.635472),
+new google.maps.LatLng(44.042234,-91.635445),
+new google.maps.LatLng(44.042232,-91.635429),
+new google.maps.LatLng(44.042274,-91.635399),
+new google.maps.LatLng(44.042266,-91.635351),
+new google.maps.LatLng(44.042284,-91.635335)
+];
+var  eastcmpAShape = new google.maps.Polygon({
+	paths:  eastcmpAPoint,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#9F3ED5',
+	fillOpacity: 0.35
+  });
+  
+  
+  addPolymouseover(eastcmpAShape);
+var eastlake_a = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;East Lake A</strong><br /><br /><img src='images/east_lake.jpg'></div><div style='padding: 0px; width:255px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;630 Franklin Street<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/housing/6214.asp'>Coed residence hall</a></font></div>";
+
+addPolygonClick(eastcmpAShape,eastlake_a); 
+	
+var memorialhallPoints = [
+new google.maps.LatLng(44.047815,-91.641598),
+new google.maps.LatLng(44.047746,-91.641641),
+new google.maps.LatLng(44.047726,-91.641576),
+new google.maps.LatLng(44.047383,-91.641764),
+new google.maps.LatLng(44.047360,-91.641673),
+new google.maps.LatLng(44.046724,-91.641995),
+new google.maps.LatLng(44.046581,-91.641480),
+new google.maps.LatLng(44.047213,-91.641163),
+new google.maps.LatLng(44.047198,-91.641083),
+new google.maps.LatLng(44.047387,-91.640981),
+new google.maps.LatLng(44.047375,-91.640938),
+new google.maps.LatLng(44.047649,-91.640798),
+new google.maps.LatLng(44.047784,-91.641244),
+new google.maps.LatLng(44.047742,-91.641281),
+new google.maps.LatLng(44.047796,-91.641474),
+new google.maps.LatLng(44.047780,-91.641485),
+new google.maps.LatLng(44.047819,-91.641587)
+];
+var  memorialhallShape = new google.maps.Polygon({
+	paths:  memorialhallPoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#9F3ED5',
+	fillOpacity: 0.35
+  });
+ var memorial = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Memorial Hall</strong><br /><br /><img src='images/memorial.jpg'></div><div style='padding: 0px; width:255px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;131 W. Sanborn Street<br />&nbsp;&nbsp;&nbsp;Athletics events center, recreation<br /><br />&nbsp;&nbsp;&nbsp;Departments:<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winonastatewarriors.com/'>McCown Gymnasium</a><br />&nbsp;&nbsp;&nbsp;Talbot Gymnasium<br />&nbsp;&nbsp;&nbsp;Intramural Office<br />&nbsp;&nbsp;&nbsp;Physical Education & Sport Science<br />&nbsp;&nbsp;&nbsp;Recreation, Tourism & Therapeutic<br />&nbsp;&nbsp;&nbsp;Recreation</font></div>";
+
+ addPolymouseover(memorialhallShape);
+addPolygonClick(memorialhallShape,memorial); 
+
+	
+var somsenhallPoints = [
+new google.maps.LatLng(44.048096,-91.642424),
+new google.maps.LatLng(44.047877,-91.641646),
+new google.maps.LatLng(44.047838,-91.641657),
+new google.maps.LatLng(44.047827,-91.641603),
+new google.maps.LatLng(44.047753,-91.641646),
+new google.maps.LatLng(44.047765,-91.641705),
+new google.maps.LatLng(44.047391,-91.641909),
+new google.maps.LatLng(44.047445,-91.642118),
+new google.maps.LatLng(44.047402,-91.642150),
+new google.maps.LatLng(44.047491,-91.642483),
+new google.maps.LatLng(44.047541,-91.642461),
+new google.maps.LatLng(44.047599,-91.642692),
+new google.maps.LatLng(44.048089,-91.642435)
+];
+
+var somsen = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Somsen Hall</strong><br /><br /><img src='images/somsen.jpg'></div><div style='padding: 0px;  background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;133 W. Sanborn Street<br />&nbsp;&nbsp;&nbsp;University administration, <br/>&nbsp;&nbsp;&nbsp;academic space<br /><br />&nbsp;&nbsp;&nbsp;Departments:<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/colleges/cob.html'>College of Business</a><br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/academics/'>Academic Affairs</a><br />&nbsp;&nbsp;&nbsp;Accounting<br />&nbsp;&nbsp;&nbsp;<a href='http://www.alumni.winona.edu/NetCommunity/Page.aspx?pid=207'>Alumni Relations</a><br />&nbsp;&nbsp;&nbsp;Business Administration MISO<br />&nbsp;&nbsp;&nbsp;Business Education<br />&nbsp;&nbsp;&nbsp;Business Office<br />&nbsp;&nbsp;&nbsp;Finance & Administrative Services<br />&nbsp;&nbsp;&nbsp;Fiscal Affairs<br />&nbsp;&nbsp;&nbsp;Foreign Languages<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/humanresources/'>Human Resources</a><br />&nbsp;&nbsp;&nbsp;Legal Affairs/Affirmative Action<br />&nbsp;&nbsp;&nbsp;Marketing<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/OCED/'>Outreach & Continuing Education</a><br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/president/'>President's Office</a><br />&nbsp;&nbsp;&nbsp;Print Shop<br />&nbsp;&nbsp;&nbsp;Publications<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/arts/somsen.asp'>Somsen Auditorium</a><br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/its/techsupport/'>Technical Support Center</a><br />&nbsp;&nbsp;&nbsp;University Marketing & Comm<br />&nbsp;&nbsp;&nbsp;<a href='http://www.alumni.winona.edu/NetCommunity/Page.aspx?&pid=247&srcid=207'>WSU Foundation</a><br />&nbsp;&nbsp;&nbsp;Mugby Junction</font></div>";
+		
+
+var  somsenShape = new google.maps.Polygon({
+	paths:  somsenhallPoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#ff0000',
+	fillOpacity: 0.35
+  });
+  
+ addPolymouseover(somsenShape);
+addPolygonClick(somsenShape,somsen);	
+
+var sustainablePoints = [
+new google.maps.LatLng(44.048316,-91.640943),
+new google.maps.LatLng(44.048216,-91.640573),
+new google.maps.LatLng(44.048199,-91.640584),
+new google.maps.LatLng(44.048179,-91.640517),
+new google.maps.LatLng(44.048106,-91.640560),
+new google.maps.LatLng(44.048152,-91.640780),
+new google.maps.LatLng(44.048175,-91.640772),
+new google.maps.LatLng(44.048185,-91.640801),
+new google.maps.LatLng(44.048204,-91.640793),
+new google.maps.LatLng(44.048222,-91.640876),
+new google.maps.LatLng(44.048183,-91.640900),
+new google.maps.LatLng(44.048212,-91.641013),
+new google.maps.LatLng(44.048314,-91.640957)
+];	
+
+var  sustainableShape = new google.maps.Polygon({
+	paths:  sustainablePoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#ff0000',
+	fillOpacity: 0.35
+  });
+
+var sustain = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Sustainability Theme House</strong><br /><br /><img src='images/sustainability.jpg'></div><div style='padding: 0px; width:255px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;377 Main Street<br /><p>The Sustainability Theme House is an academic themed-based housing unit that is dedicated to sustainability. Students who apply and are selected to live in the Theme House are expected to put forth an honest effort to achieve a sustainable lifestyle while living in the house.  Once invited to join the Sustainability Theme House, accepted students will choose a house committee and will be expected to take an active role. The students of the Sustainability Theme House are required to present programs and workshops to other members of the campus community to promote and maintain high standards of sustainable living in the Winona State Community.</p></font></div>";
+		
+  
+ addPolymouseover(sustainableShape);
+addPolygonClick(sustainableShape,sustain);
+
+var alumniPoints = [
+new google.maps.LatLng(44.049720,-91.643840),
+new google.maps.LatLng(44.049677,-91.643655),
+new google.maps.LatLng(44.049641,-91.643658),
+new google.maps.LatLng(44.049606,-91.643693),
+new google.maps.LatLng(44.049614,-91.643735),
+new google.maps.LatLng(44.049589,-91.643778),
+new google.maps.LatLng(44.049612,-91.643899),
+new google.maps.LatLng(44.049716,-91.643845)
+];
+
+var  alumniShape = new google.maps.Polygon({
+	paths:  alumniPoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#ff0000',
+	fillOpacity: 0.35
+  });
+
+var alumni = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Alumni House</strong><br /><br /><img src='images/alumni_house.jpg'></div><div style='padding: 0px; width:255px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;Alumni House<br />&nbsp;&nbsp;&nbsp;227 W 7th Street<br />&nbsp;&nbsp;&nbsp;Winona, MN 55987<br />&nbsp;&nbsp;&nbsp;507.457.2978<br /<p>The Department of Housing & Residence Life is happy to provide a warm and friendly place for alumni, parents, faculty and guests of the university during their stay in Winona. Four guests bedrooms located on the 2nd floor can accommodate a total of 8 people.  Each room has bed(s), alarm clock and TV. The first floor of the house is wheelchair accessible. The living room with a large flat screen TV, dining room, and kitchen are available to the Alumni House guests. The first floor can also be reserved specifically for meetings and events for up to 25 people.  The Alumni House is also home for the WSU Retiree Center. If you would like to learn more about the Alumni House or make a reservation, please email us or call 507.457.2978.  </p></font></div>";
+		
+  
+ addPolymouseover(alumniShape);
+addPolygonClick(alumniShape,alumni);
+
+var tauPoints = [
+new google.maps.LatLng(44.050421,-91.671526),
+new google.maps.LatLng(44.050117,-91.671113),
+new google.maps.LatLng(44.050005,-91.671268),
+new google.maps.LatLng(44.049805,-91.670995),
+new google.maps.LatLng(44.050003,-91.670721),
+new google.maps.LatLng(44.050092,-91.670842),
+new google.maps.LatLng(44.050150,-91.670769),
+new google.maps.LatLng(44.050163,-91.670788),
+new google.maps.LatLng(44.050410,-91.670442),
+new google.maps.LatLng(44.050433,-91.670480),
+new google.maps.LatLng(44.050421,-91.670491),
+new google.maps.LatLng(44.050456,-91.670536),
+new google.maps.LatLng(44.050155,-91.670968),
+new google.maps.LatLng(44.050169,-91.670995),
+new google.maps.LatLng(44.050163,-91.671011),
+new google.maps.LatLng(44.050466,-91.671427),
+new google.maps.LatLng(44.050435,-91.671472),
+new google.maps.LatLng(44.050450,-91.671491),
+new google.maps.LatLng(44.050421,-91.671534)
+];
+
+var  tauShape = new google.maps.Polygon({
+	paths:  tauPoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#48036F',
+	fillOpacity: 0.35
+  });
+  
+  
+ addPolymouseover(tauShape);
+var tau = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;Tau Center</strong><br /><br /><img src='images/tau_ctr.jpg'></div><div style='padding: 0px; width:255px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;511 Hilbert Street<br />&nbsp;&nbsp;<a href='http://www.winona.edu/housing/6212.asp'>West Campus residence hall, event center</a></font></div>";
+
+addPolygonClick(tauShape,tau);	
+
+var mariaPoints = [
+new google.maps.LatLng(44.051289,-91.670866),
+new google.maps.LatLng(44.051123,-91.670871),
+new google.maps.LatLng(44.051123,-91.670791),
+new google.maps.LatLng(44.051061,-91.670780),
+new google.maps.LatLng(44.051058,-91.671413),
+new google.maps.LatLng(44.051015,-91.671424),
+new google.maps.LatLng(44.051011,-91.671456),
+new google.maps.LatLng(44.050965,-91.671467),
+new google.maps.LatLng(44.050957,-91.671429),
+new google.maps.LatLng(44.050938,-91.671424),
+new google.maps.LatLng(44.050938,-91.670786),
+new google.maps.LatLng(44.050923,-91.670791),
+new google.maps.LatLng(44.050923,-91.670689),
+new google.maps.LatLng(44.050942,-91.670689),
+new google.maps.LatLng(44.050938,-91.670598),
+new google.maps.LatLng(44.051061,-91.670598),
+new google.maps.LatLng(44.051065,-91.670743),
+new google.maps.LatLng(44.051127,-91.670737),
+new google.maps.LatLng(44.051127,-91.670641),
+new google.maps.LatLng(44.051293,-91.670662),
+new google.maps.LatLng(44.051293,-91.670887)
+];
+
+var maria = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Maria Hall</strong><br /><br /><img src='images/tau_ctr.jpg'></div><div style='padding: 0px; width:255px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;455 Hilbert Street<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/housing/6197.asp'>West Campus residence hall</a></font></div>";
+
+var  mariaShape = new google.maps.Polygon({
+	paths:  mariaPoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#48036F',
+	fillOpacity: 0.35
+  });
+  
+ addPolymouseover(mariaShape);
+
+addPolygonClick(mariaShape,maria);	
+	
+var lourdesPoints = [
+new google.maps.LatLng(44.051975,-91.669739),
+new google.maps.LatLng(44.051929,-91.669734),
+new google.maps.LatLng(44.051925,-91.669793),
+new google.maps.LatLng(44.051644,-91.669809),
+new google.maps.LatLng(44.051640,-91.670013),
+new google.maps.LatLng(44.051532,-91.670013),
+new google.maps.LatLng(44.051532,-91.669793),
+new google.maps.LatLng(44.051401,-91.669804),
+new google.maps.LatLng(44.051405,-91.670024),
+new google.maps.LatLng(44.050884,-91.670018),
+new google.maps.LatLng(44.050884,-91.669798),
+new google.maps.LatLng(44.050745,-91.669809),
+new google.maps.LatLng(44.050738,-91.670018),
+new google.maps.LatLng(44.050626,-91.670018),
+new google.maps.LatLng(44.050626,-91.669820),
+new google.maps.LatLng(44.050564,-91.669815),
+new google.maps.LatLng(44.050564,-91.669654),
+new google.maps.LatLng(44.050626,-91.669648),
+new google.maps.LatLng(44.050626,-91.669391),
+new google.maps.LatLng(44.050568,-91.669385),
+new google.maps.LatLng(44.050568,-91.669241),
+new google.maps.LatLng(44.050630,-91.669241),
+new google.maps.LatLng(44.050626,-91.669031),
+new google.maps.LatLng(44.050734,-91.669026),
+new google.maps.LatLng(44.050749,-91.669643),
+new google.maps.LatLng(44.051524,-91.669638),
+new google.maps.LatLng(44.051524,-91.669225),
+new google.maps.LatLng(44.051543,-91.669225),
+new google.maps.LatLng(44.051547,-91.669015),
+new google.maps.LatLng(44.051636,-91.669015),
+new google.maps.LatLng(44.051636,-91.669230),
+new google.maps.LatLng(44.051698,-91.669225),
+new google.maps.LatLng(44.051698,-91.669375),
+new google.maps.LatLng(44.051636,-91.669380),
+new google.maps.LatLng(44.051640,-91.669643),
+new google.maps.LatLng(44.051929,-91.669648),
+new google.maps.LatLng(44.051929,-91.669697),
+new google.maps.LatLng(44.051975,-91.669697),
+new google.maps.LatLng(44.051975,-91.669761)
+];
+
+var  lourdesShape = new google.maps.Polygon({
+	paths:  lourdesPoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#48036F',
+	fillOpacity: 0.35
+  });
+  
+ addPolymouseover(lourdesShape);
+var lourdes = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Lourdes Hall</strong><br /><br /><img src='images/tau_ctr.jpg'></div><div style='padding: 0px; width:255px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;457 Gould Street<br />&nbsp;&nbsp;&nbsp;West Campus residence hall, academic &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;space<br /><br />&nbsp;&nbsp;&nbsp;Departments:<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/rescollege/index.asp'>Residential College</a></font></div>";
+
+addPolygonClick(lourdesShape,lourdes);	
+
+	
+var newHallPoints = [
+new google.maps.LatLng(44.046107,-91.647102),
+new google.maps.LatLng(44.046280,-91.647010),
+new google.maps.LatLng(44.046265,-91.646935),
+new google.maps.LatLng(44.046280,-91.646919),
+new google.maps.LatLng(44.046172,-91.646565),
+new google.maps.LatLng(44.046099,-91.646597),
+new google.maps.LatLng(44.045968,-91.646163),
+new google.maps.LatLng(44.045856,-91.646211),
+new google.maps.LatLng(44.045883,-91.646318),
+new google.maps.LatLng(44.045876,-91.646324),
+new google.maps.LatLng(44.045960,-91.646646),
+new google.maps.LatLng(44.046007,-91.646619),
+new google.maps.LatLng(44.046018,-91.646667),
+new google.maps.LatLng(44.046057,-91.646640),
+new google.maps.LatLng(44.046118,-91.646882),
+new google.maps.LatLng(44.046010,-91.646941),
+new google.maps.LatLng(44.046034,-91.647010),
+new google.maps.LatLng(44.046072,-91.647000),
+new google.maps.LatLng(44.046107,-91.647112)
+];
+
+var  newHallShape = new google.maps.Polygon({
+	paths:  newHallPoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#48036F',
+	fillOpacity: 0.35
+  });
+ var newresidence_2 = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;New Residence Hall</strong><br /><br /><img src='images/new_residence_hall.jpg'></div><div style='padding: 0px; width:255px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;223-263 W. Mark Street<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/housing/'>Coed residence hall (beginning 2010)</a></font></div>";
+ 
+ addPolymouseover(newHallShape);
+ addPolygonClick(newHallShape,newresidence_2);	
+
+var secondHallPoints = [
+new google.maps.LatLng(44.045775,-91.645911),
+new google.maps.LatLng(44.045895,-91.645857),
+new google.maps.LatLng(44.045783,-91.645460),
+new google.maps.LatLng(44.045837,-91.645444),
+new google.maps.LatLng(44.045822,-91.645364),
+new google.maps.LatLng(44.045845,-91.645353),
+new google.maps.LatLng(44.045744,-91.644988),
+new google.maps.LatLng(44.045714,-91.644999),
+new google.maps.LatLng(44.045694,-91.644934),
+new google.maps.LatLng(44.045459,-91.645047),
+new google.maps.LatLng(44.045502,-91.645208),
+new google.maps.LatLng(44.045633,-91.645149),
+new google.maps.LatLng(44.045706,-91.645406),
+new google.maps.LatLng(44.045667,-91.645423),
+new google.maps.LatLng(44.045683,-91.645471),
+new google.maps.LatLng(44.045636,-91.645498),
+new google.maps.LatLng(44.045729,-91.645782),
+new google.maps.LatLng(44.045748,-91.645782),
+new google.maps.LatLng(44.045779,-91.645927)
+];
+
+var  secondHallShape = new google.maps.Polygon({
+	paths:  secondHallPoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#48036F',
+	fillOpacity: 0.35
+  });
+ var newresidence = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Kirkland Residence Hall</strong><br /><br /><img src='images/new_residence_hall.jpg'></div><div style='padding: 0px; width:255px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;223-263 W. Mark Street<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/housing/'>Coed residence hall (beginning 2010)</a></font></div>";
+ 
+ addPolymouseover(secondHallShape);
+addPolygonClick(secondHallShape,newresidence);	
+
+	
+	var phelpshallPoints = [
+new google.maps.LatLng(44.048150,-91.642950),
+new google.maps.LatLng(44.048077,-91.642671),
+new google.maps.LatLng(44.048015,-91.642708),
+new google.maps.LatLng(44.048012,-91.642746),
+new google.maps.LatLng(44.047977,-91.642767),
+new google.maps.LatLng(44.047942,-91.642681),
+new google.maps.LatLng(44.047726,-91.642794),
+new google.maps.LatLng(44.047749,-91.642891),
+new google.maps.LatLng(44.047715,-91.642912),
+new google.maps.LatLng(44.047688,-91.642880),
+new google.maps.LatLng(44.047626,-91.642912),
+new google.maps.LatLng(44.047695,-91.643186),
+new google.maps.LatLng(44.047776,-91.643143),
+new google.maps.LatLng(44.047765,-91.643105),
+new google.maps.LatLng(44.048069,-91.642960),
+new google.maps.LatLng(44.048093,-91.642998),
+new google.maps.LatLng(44.048147,-91.642966)
+];
+var  phelpShape = new google.maps.Polygon({
+	paths:  phelpshallPoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#48036F',
+	fillOpacity: 0.35
+  });
+  
+ var phelps = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Phelps Hall</strong><br /><br /><img src='images/phelps.jpg'></div><div style='padding: 0px; width:255px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;139 W. Sanborn Street<br />&nbsp;&nbsp;&nbsp;Liberal arts academic space<br /><br />&nbsp;&nbsp;&nbsp;Departments:<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/college_liberalarts/cola.htm'>College of Liberal Arts</a><br />&nbsp;&nbsp;&nbsp;Mass Communication<br />&nbsp;&nbsp;&nbsp;Psychology<br />&nbsp;&nbsp;&nbsp;<a href='http://www.kqal.org' >KQAL-FM</a></font></div>";
+
+ addPolymouseover(phelpShape);
+addPolygonClick(phelpShape,phelps);
+
+var wabashahallPoints = [
+new google.maps.LatLng(44.047948,-91.637148),
+new google.maps.LatLng(44.047769,-91.636499),
+new google.maps.LatLng(44.047435,-91.636676),
+new google.maps.LatLng(44.047505,-91.636904),
+new google.maps.LatLng(44.047719,-91.636802),
+new google.maps.LatLng(44.047732,-91.636848),
+new google.maps.LatLng(44.047722,-91.636858),
+new google.maps.LatLng(44.047728,-91.636888),
+new google.maps.LatLng(44.047771,-91.636872),
+new google.maps.LatLng(44.047780,-91.636915),
+new google.maps.LatLng(44.047545,-91.637051),
+new google.maps.LatLng(44.047603,-91.637255),
+new google.maps.LatLng(44.047863,-91.637108),
+new google.maps.LatLng(44.047884,-91.637177),
+new google.maps.LatLng(44.047942,-91.637156)
+];
+var  wabashahallShape = new google.maps.Polygon({
+	paths:  wabashahallPoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#ff7400',
+	fillOpacity: 0.35
+  });
+  var wabasha = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Wabasha Hall</strong><br /><br /><img src='images/wabasha_hall.jpg'></div><div style='padding: 0px; width:255px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;101 E. Wabasha Street<br />&nbsp;&nbsp;&nbsp;Fitness, recreation; university childcare<br /><br />&nbsp;&nbsp;&nbsp;Departments:<br />&nbsp;&nbsp;&nbsp;KEAP Center<br />&nbsp;&nbsp;&nbsp;Fitness & Wellness Center<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/gradcatalog/MaxwellChildren'sCenter.asp'>Maxwell Children's Center</a><br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/healthservices/'>Student Health Services</a></font></div>";
+addPolygonClick(wabashahallShape,wabasha);
+ addPolymouseover(wabashahallShape);
+
+	
+	var reccenterPoint = [
+new google.maps.LatLng(44.048125,-91.637819),
+new google.maps.LatLng(44.048042,-91.637537),
+new google.maps.LatLng(44.047844,-91.637641),
+new google.maps.LatLng(44.047830,-91.637604),
+new google.maps.LatLng(44.047801,-91.637612),
+new google.maps.LatLng(44.047790,-91.637593),
+new google.maps.LatLng(44.047757,-91.637615),
+new google.maps.LatLng(44.047757,-91.637655),
+new google.maps.LatLng(44.047695,-91.637692),
+new google.maps.LatLng(44.047684,-91.637652),
+new google.maps.LatLng(44.047605,-91.637695),
+new google.maps.LatLng(44.047613,-91.637735),
+new google.maps.LatLng(44.047559,-91.637768),
+new google.maps.LatLng(44.047667,-91.638154),
+new google.maps.LatLng(44.047852,-91.638052),
+new google.maps.LatLng(44.047828,-91.637974),
+new google.maps.LatLng(44.048118,-91.637819)
+];
+var  reccenterShape = new google.maps.Polygon({
+	paths:  reccenterPoint,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#ff7400',
+	fillOpacity: 0.35
+  });
+  
+addPolymouseover(reccenterShape);
+ var wabasha_recreation_center = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Wabasha Recreation Center</strong><br /><br /><img src='images/wabasha_rec_ctr.jpg'></div><div style='padding: 0px; width:255px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;351 Lafayette Street<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/intramural/'>Recreation, athletics events center</a></font></div>";
+addPolygonClick(reccenterShape,wabasha_recreation_center);	
+ 
+ 
+var mygildmeister = [
+new google.maps.LatLng(44.047553,-91.644961),
+new google.maps.LatLng(44.047854,-91.644803),
+new google.maps.LatLng(44.047800,-91.644602),
+new google.maps.LatLng(44.047715,-91.644650),
+new google.maps.LatLng(44.047703,-91.644618),
+new google.maps.LatLng(44.047713,-91.644610),
+new google.maps.LatLng(44.047707,-91.644578),
+new google.maps.LatLng(44.047692,-91.644583),
+new google.maps.LatLng(44.047682,-91.644551),
+new google.maps.LatLng(44.047755,-91.644511),
+new google.maps.LatLng(44.047618,-91.644036),
+new google.maps.LatLng(44.047449,-91.644124),
+new google.maps.LatLng(44.047582,-91.644610),
+new google.maps.LatLng(44.047634,-91.644586),
+new google.maps.LatLng(44.047641,-91.644607),
+new google.maps.LatLng(44.047634,-91.644615),
+new google.maps.LatLng(44.047643,-91.644653),
+new google.maps.LatLng(44.047655,-91.644647),
+new google.maps.LatLng(44.047661,-91.644677),
+new google.maps.LatLng(44.047499,-91.644763),
+new google.maps.LatLng(44.047551,-91.644959)
+];	
+
+var  gildmeisterShape = new google.maps.Polygon({
+	paths:  mygildmeister,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#48036F',
+	fillOpacity: 0.35
+  });
+  
+ addPolymouseover(gildmeisterShape);
+var gilde = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Gildemeister Hall</strong><br /><br /><img src='images/gildemeister.jpg'></div><div style='padding: 0px; width:255px; background:#CCCCCC;'><br /><font size=2>&nbsp;&nbsp;&nbsp;221 W. King Street<br />&nbsp;&nbsp;&nbsp;Education, mathematics academic space<br /><br />&nbsp;&nbsp;&nbsp;Departments:<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/college_education/COE.html'>College of Education</a><br />&nbsp;&nbsp;&nbsp;Counseling Center<br />&nbsp;&nbsp;&nbsp;Counseling Education<br />&nbsp;&nbsp;&nbsp;Mathematics & Statistics</font></div>";
+addPolygonClick(gildmeisterShape,gilde);	
+	
+	
+ var southmaxwellhallPoints = [
+new google.maps.LatLng(44.048602,-91.642306),
+new google.maps.LatLng(44.048956,-91.642113),
+new google.maps.LatLng(44.048848,-91.641726),
+new google.maps.LatLng(44.048779,-91.641769),
+new google.maps.LatLng(44.048779,-91.641812),
+new google.maps.LatLng(44.048594,-91.641887),
+new google.maps.LatLng(44.048563,-91.641877),
+new google.maps.LatLng(44.048509,-91.641898),
+new google.maps.LatLng(44.048594,-91.642284)
+];
+var  southMaxwellShape = new google.maps.Polygon({
+	paths:  southmaxwellhallPoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#48036F',
+	fillOpacity: 0.35
+  });
+  
+ addPolymouseover(southMaxwellShape);
+ 
+ var northmaxwellhallPoints = [
+new google.maps.LatLng(44.048949,-91.642746),
+new google.maps.LatLng(44.048910,-91.642563),
+new google.maps.LatLng(44.048933,-91.642531),
+new google.maps.LatLng(44.048864,-91.642317),
+new google.maps.LatLng(44.048841,-91.642317),
+new google.maps.LatLng(44.048817,-91.642209),
+new google.maps.LatLng(44.048609,-91.642327),
+new google.maps.LatLng(44.048671,-91.642638),
+new google.maps.LatLng(44.048663,-91.642649),
+new google.maps.LatLng(44.048679,-91.642746),
+new google.maps.LatLng(44.048710,-91.642735),
+new google.maps.LatLng(44.048740,-91.642874),
+new google.maps.LatLng(44.048941,-91.642767)
+];
+var  northMaxwellShape = new google.maps.Polygon({
+	paths:   northmaxwellhallPoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#48036F',
+	fillOpacity: 0.35
+  });
+
+  var maxwell = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Maxwell Hall</strong><br /><br /><img src='images/maxwell_hall.jpg'></div><div style='padding: 0px; width:255px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;622 Johnson Street<br />&nbsp;&nbsp;&nbsp;Admissions, Maxwell One-Stop, NCPTC<br /><br />&nbsp;&nbsp;&nbsp;Departments:<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/admissions/'>Admissions</a><br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/warriorhub/'>Warrior Hub:</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/financialaid/index.asp'>Financial Aid</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/registrar/'>Registrar's Office</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/campuscard/'>Student Accounts/Campus Card</a><br />&nbsp;&nbsp;&nbsp;Advising Services<br />&nbsp;&nbsp;&nbsp;Career Services<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/disabilityservices/index.html'>Disability Services</a><br />&nbsp;&nbsp;&nbsp;Teaching & Learning Technology Services<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/graduatestudy/default.html'>Graduate Studies</a><br />&nbsp;&nbsp;&nbsp;Grants & Sponsored Projects<br />&nbsp;&nbsp;&nbsp;Health Education<br />&nbsp;&nbsp;&nbsp;Health, Exercise & Rehabilitative &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sciences<br />&nbsp;&nbsp;&nbsp;<a href='http://www.ncptc.org/'>National Child Protection Training Center</a><br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/parking/'>Parking Services</a><br />&nbsp;&nbsp;&nbsp;Veterans Services<br />&nbsp;&nbsp;&nbsp;Cardiac Rehabilitation Center</font></div>";
+addPolygonClick(northMaxwellShape ,maxwell);
+addPolymouseover(northMaxwellShape);
+
+ var watkinshallPoints = [
+new google.maps.LatLng(44.048494,-91.644543),
+new google.maps.LatLng(44.048368,-91.644100),
+new google.maps.LatLng(44.048052,-91.644264),
+new google.maps.LatLng(44.048175,-91.644709),
+new google.maps.LatLng(44.048490,-91.644545)
+];
+var  watkinsShape = new google.maps.Polygon({
+	paths:   watkinshallPoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#48036F',
+	fillOpacity: 0.35
+  });
+ var watkins = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Watkins Hall</strong><br /><br /><img src='images/watkins.jpg'></div><div style='padding: 0px; width:255px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;222 W. Howard Street<br /><br />&nbsp;&nbsp;&nbsp;Departments:<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/arts/watkins.asp'>Paul Watkins Gallery</a><br />&nbsp;&nbsp;&nbsp;Art<br />&nbsp;&nbsp;&nbsp;Computer Science</font></div>";
+addPolymouseover(watkinsShape);
+addPolygonClick(watkinsShape ,watkins);
+
+ var conwayhallPoints = [
+new google.maps.LatLng(44.048908,-91.645203),
+new google.maps.LatLng(44.048939,-91.645184),
+new google.maps.LatLng(44.048954,-91.645240),
+new google.maps.LatLng(44.048979,-91.645224),
+new google.maps.LatLng(44.048968,-91.645170),
+new google.maps.LatLng(44.048993,-91.645154),
+new google.maps.LatLng(44.048866,-91.644680),
+new google.maps.LatLng(44.048817,-91.644709),
+new google.maps.LatLng(44.048831,-91.644752),
+new google.maps.LatLng(44.048790,-91.644771),
+new google.maps.LatLng(44.048904,-91.645197)
+];
+var  conwayhallShape = new google.maps.Polygon({
+	paths:  conwayhallPoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#48036F',
+	fillOpacity: 0.35
+  });
+
+var conway = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Conway Hall</strong><br /><br /><img src='images/conway.jpg'></div><div style='padding: 0px; width:255px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;403 Winona Street<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/housing/6206.asp'>Coed residence hall</a></font></div>";
+
+addPolymouseover(conwayhallShape);
+addPolygonClick(conwayhallShape ,conway);
+
+var myMain = [
+new google.maps.LatLng(44.047553,-91.646217),
+new google.maps.LatLng(44.047726,-91.646023),
+new google.maps.LatLng(44.047684,-91.645868),
+new google.maps.LatLng(44.047695,-91.645857),
+new google.maps.LatLng(44.047607,-91.645525),
+new google.maps.LatLng(44.047618,-91.645508),
+new google.maps.LatLng(44.047599,-91.645428),
+new google.maps.LatLng(44.047580,-91.645433),
+new google.maps.LatLng(44.047426,-91.644854),
+new google.maps.LatLng(44.047402,-91.644859),
+new google.maps.LatLng(44.047383,-91.644784),
+new google.maps.LatLng(44.047360,-91.644790),
+new google.maps.LatLng(44.047352,-91.644773),
+new google.maps.LatLng(44.047387,-91.644741),
+new google.maps.LatLng(44.047368,-91.644655),
+new google.maps.LatLng(44.047310,-91.644698),
+new google.maps.LatLng(44.047283,-91.644613),
+new google.maps.LatLng(44.047102,-91.644714),
+new google.maps.LatLng(44.047129,-91.644806),
+new google.maps.LatLng(44.047059,-91.644838),
+new google.maps.LatLng(44.047082,-91.644902),
+new google.maps.LatLng(44.047109,-91.644892),
+new google.maps.LatLng(44.047136,-91.644999),
+new google.maps.LatLng(44.047121,-91.645010),
+new google.maps.LatLng(44.047194,-91.645342),
+new google.maps.LatLng(44.047144,-91.645364),
+new google.maps.LatLng(44.047113,-91.645283),
+new google.maps.LatLng(44.047055,-91.645310),
+new google.maps.LatLng(44.047071,-91.645412),
+new google.maps.LatLng(44.046774,-91.645567),
+new google.maps.LatLng(44.046759,-91.645530),
+new google.maps.LatLng(44.046720,-91.645562),
+new google.maps.LatLng(44.046739,-91.645600),
+new google.maps.LatLng(44.046720,-91.645600),
+new google.maps.LatLng(44.046708,-91.645578),
+new google.maps.LatLng(44.046685,-91.645594),
+new google.maps.LatLng(44.046743,-91.645777),
+new google.maps.LatLng(44.046755,-91.645787),
+new google.maps.LatLng(44.046785,-91.645905),
+new google.maps.LatLng(44.046774,-91.645916),
+new google.maps.LatLng(44.046785,-91.645954),
+new google.maps.LatLng(44.046832,-91.645938),
+new google.maps.LatLng(44.046839,-91.645959),
+new google.maps.LatLng(44.046863,-91.645948),
+new google.maps.LatLng(44.046855,-91.645916),
+new google.maps.LatLng(44.046886,-91.645889),
+new google.maps.LatLng(44.046901,-91.645916),
+new google.maps.LatLng(44.046955,-91.645889),
+new google.maps.LatLng(44.046947,-91.645868),
+new google.maps.LatLng(44.047013,-91.645830),
+new google.maps.LatLng(44.047025,-91.645852),
+new google.maps.LatLng(44.047079,-91.645825),
+new google.maps.LatLng(44.047055,-91.645712),
+new google.maps.LatLng(44.047206,-91.645637),
+new google.maps.LatLng(44.047163,-91.645465),
+new google.maps.LatLng(44.047233,-91.645433),
+new google.maps.LatLng(44.047279,-91.645594),
+new google.maps.LatLng(44.047294,-91.645584),
+new google.maps.LatLng(44.047314,-91.645669),
+new google.maps.LatLng(44.047302,-91.645685),
+new google.maps.LatLng(44.047391,-91.646013),
+new google.maps.LatLng(44.047410,-91.646002),
+new google.maps.LatLng(44.047449,-91.646168),
+new google.maps.LatLng(44.047468,-91.646168),
+new google.maps.LatLng(44.047476,-91.646211),
+new google.maps.LatLng(44.047495,-91.646211),
+new google.maps.LatLng(44.047499,-91.646190),
+new google.maps.LatLng(44.047518,-91.646179),
+new google.maps.LatLng(44.047534,-91.646184),
+new google.maps.LatLng(44.047549,-91.646211)
+];
+
+var  myMainShape = new google.maps.Polygon({
+	paths:  myMain,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#9F3ED5',
+	fillOpacity: 0.35
+  });
+  
+addPolymouseover(myMainShape);
+var kryzsko = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Kryzsko Commons</strong><br /><br /><img src='images/kryzsko.jpg'></div><div style='padding: 0px; width:255px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;250 W. Howard Street<br />&nbsp;&nbsp;&nbsp;Student union and activity center<br /><br />&nbsp;&nbsp;&nbsp;Departments:<br />&nbsp;&nbsp;&nbsp;Community Liaison<br />&nbsp;&nbsp;&nbsp;Dining Services<br />&nbsp;&nbsp;&nbsp;Greek Council & Student Club Office<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/Housing/'>Housing & Residential Life</a><br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/international/'>International Education</a><br />&nbsp;&nbsp;&nbsp;Office of Inclusion & Diversity<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/sld/default.asp'>Student Life & Development</a><br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/src/'>Student Resource Center</a><br />&nbsp;&nbsp;&nbsp;Student Senate<br />&nbsp;&nbsp;&nbsp;Student Union<br />&nbsp;&nbsp;&nbsp;UPAC<br />&nbsp;&nbsp;&nbsp;<a href='http://www.wsubookstore.com/'>WSU Bookstore</a></font></div>";
+
+addPolygonClick(myMainShape,kryzsko); 
+
+var kryzskoAdd = [
+new google.maps.LatLng(44.047048,-91.645310),
+new google.maps.LatLng(44.046986,-91.645315),
+new google.maps.LatLng(44.046994,-91.645353),
+new google.maps.LatLng(44.046940,-91.645347),
+new google.maps.LatLng(44.046944,-91.645380),
+new google.maps.LatLng(44.046890,-91.645369),
+new google.maps.LatLng(44.046890,-91.645406),
+new google.maps.LatLng(44.046832,-91.645396),
+new google.maps.LatLng(44.046836,-91.645428),
+new google.maps.LatLng(44.046766,-91.645396),
+new google.maps.LatLng(44.046639,-91.645460),
+new google.maps.LatLng(44.046654,-91.645525),
+new google.maps.LatLng(44.046627,-91.645562),
+new google.maps.LatLng(44.046624,-91.645546),
+new google.maps.LatLng(44.046639,-91.645621),
+new google.maps.LatLng(44.047059,-91.645406),
+new google.maps.LatLng(44.047048,-91.645326)
+];
+
+var  kryzskoAddShape = new google.maps.Polygon({
+	paths:  kryzskoAdd,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#ff7400',
+	fillOpacity: 0.35
+  });
+  
+addPolymouseover(kryzskoAddShape);
+var kryzsko2 = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Kryzsko Commons Addition</strong><br /><br /><img src='images/kryzsko_add.jpg'></div><div style='padding: 0px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;250 W. Howard Street<br />&nbsp;&nbsp;&nbsp;Student union and activity center<br /><br />&nbsp;&nbsp;&nbsp;Departments:<br />&nbsp;&nbsp;&nbsp;Community Liaison<br />&nbsp;&nbsp;&nbsp;Dining Services<br />&nbsp;&nbsp;&nbsp;Greek Council & Student Club Office<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/Housing/'>Housing & Residential Life</a><br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/international/'>International Education</a><br />&nbsp;&nbsp;&nbsp;Office of Inclusion & Diversity<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/sld/default.asp'>Student Life & Development</a><br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/src/'>Student Resource Center</a><br />&nbsp;&nbsp;&nbsp;Student Senate<br />&nbsp;&nbsp;&nbsp;Student Union<br />&nbsp;&nbsp;&nbsp;UPAC<br />&nbsp;&nbsp;&nbsp;<a href='http://www.wsubookstore.com/'>WSU Bookstore</a></font></div>";
+
+addPolygonClick(kryzskoAddShape,kryzsko2); 
+
+var myMinne = [
+new google.maps.LatLng(44.046670,-91.644988),
+new google.maps.LatLng(44.046616,-91.644790),
+new google.maps.LatLng(44.046635,-91.644779),
+new google.maps.LatLng(44.046585,-91.644586),
+new google.maps.LatLng(44.046570,-91.644596),
+new google.maps.LatLng(44.046558,-91.644543),
+new google.maps.LatLng(44.046546,-91.644554),
+new google.maps.LatLng(44.046519,-91.644446),
+new google.maps.LatLng(44.046242,-91.644602),
+new google.maps.LatLng(44.046388,-91.645138),
+new google.maps.LatLng(44.046562,-91.645058),
+new google.maps.LatLng(44.046585,-91.645101),
+new google.maps.LatLng(44.046647,-91.645063),
+new google.maps.LatLng(44.046631,-91.645015),
+new google.maps.LatLng(44.046666,-91.644993)
+];
+var  myMinneShape = new google.maps.Polygon({
+	paths:  myMinne,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#48036F',
+	fillOpacity: 0.35
+  });
+  
+ var minne = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Minne Hall</strong><br /><br /><img src='images/minne.jpg'></div><div style='padding: 0px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;207 W. Howard Street<br />&nbsp;&nbsp;&nbsp;Liberal arts academic space<br /><br />&nbsp;&nbsp;&nbsp;Departments:<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/college_liberalarts/cola.htm'>College of Liberal Arts</a><br />&nbsp;&nbsp;&nbsp;Criminal Justice<br />&nbsp;&nbsp;&nbsp;English<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/elc/'>English Language Center</a><br />&nbsp;&nbsp;&nbsp;Geography<br />&nbsp;&nbsp;&nbsp;Global Studies<br />&nbsp;&nbsp;&nbsp;History<br />&nbsp;&nbsp;&nbsp;Law and Society<br />&nbsp;&nbsp;&nbsp;Paralegal<br />&nbsp;&nbsp;&nbsp;Philosophy<br />&nbsp;&nbsp;&nbsp;Political Science<br />&nbsp;&nbsp;&nbsp;Social Work<br />&nbsp;&nbsp;&nbsp;Sociology<br />&nbsp;&nbsp;&nbsp;Women's and Gender Studies<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/writingcenter/'>Writing Center</a></font></div>";
+  
+addPolymouseover(myMinneShape);
+addPolygonClick(myMinneShape,minne); 
+
+var myLibary = [
+new google.maps.LatLng(44.046435,-91.644065),
+new google.maps.LatLng(44.046415,-91.643974),
+new google.maps.LatLng(44.046469,-91.643953),
+new google.maps.LatLng(44.046485,-91.643926),
+new google.maps.LatLng(44.046489,-91.643904),
+new google.maps.LatLng(44.046485,-91.643878),
+new google.maps.LatLng(44.046469,-91.643829),
+new google.maps.LatLng(44.046535,-91.643797),
+new google.maps.LatLng(44.046516,-91.643727),
+new google.maps.LatLng(44.046527,-91.643722),
+new google.maps.LatLng(44.046473,-91.643529),
+new google.maps.LatLng(44.046458,-91.643529),
+new google.maps.LatLng(44.046438,-91.643465),
+new google.maps.LatLng(44.046365,-91.643507),
+new google.maps.LatLng(44.046354,-91.643475),
+new google.maps.LatLng(44.046338,-91.643454),
+new google.maps.LatLng(44.046319,-91.643443),
+new google.maps.LatLng(44.046304,-91.643432),
+new google.maps.LatLng(44.046292,-91.643427),
+new google.maps.LatLng(44.046265,-91.643438),
+new google.maps.LatLng(44.046226,-91.643336),
+new google.maps.LatLng(44.045914,-91.643502),
+new google.maps.LatLng(44.045941,-91.643609),
+new google.maps.LatLng(44.045910,-91.643625),
+new google.maps.LatLng(44.045903,-91.643658),
+new google.maps.LatLng(44.045903,-91.643690),
+new google.maps.LatLng(44.045914,-91.643754),
+new google.maps.LatLng(44.045868,-91.643792),
+new google.maps.LatLng(44.045872,-91.643840),
+new google.maps.LatLng(44.045918,-91.644055),
+new google.maps.LatLng(44.045945,-91.644092),
+new google.maps.LatLng(44.045987,-91.644071),
+new google.maps.LatLng(44.046003,-91.644108),
+new google.maps.LatLng(44.046034,-91.644130),
+new google.maps.LatLng(44.046057,-91.644140),
+new google.maps.LatLng(44.046091,-91.644124),
+new google.maps.LatLng(44.046122,-91.644237),
+new google.maps.LatLng(44.046427,-91.644076)
+];
+var  myLibaryShape = new google.maps.Polygon({
+	paths:  myLibary,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#ff7400',
+	fillOpacity: 0.35
+  });
+var library = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Darrell W. Krueger Library</strong><br /><br /><img src='images/krueger_libr.jpg'></div><div style='padding: 0px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;525 Johnson Street<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/library/'>Library, art collections</a><br /><br />&nbsp;&nbsp;&nbsp;Departments:<br />&nbsp;&nbsp;&nbsp;Student Suppport Services</font></div>";
+  
+ addPolymouseover(myLibaryShape);
+addPolygonClick(myLibaryShape,library); 
+
+
+var myPerformanceCenter = [
+new google.maps.LatLng(44.047358,-91.643414),
+new google.maps.LatLng(44.047161,-91.643529),
+new google.maps.LatLng(44.047131,-91.643438),
+new google.maps.LatLng(44.047023,-91.643494),
+new google.maps.LatLng(44.047053,-91.643550),
+new google.maps.LatLng(44.047061,-91.643636),
+new google.maps.LatLng(44.046903,-91.643717),
+new google.maps.LatLng(44.046866,-91.643655),
+new google.maps.LatLng(44.046857,-91.643561),
+new google.maps.LatLng(44.046880,-91.643553),
+new google.maps.LatLng(44.046874,-91.643524),
+new google.maps.LatLng(44.046749,-91.643585),
+new google.maps.LatLng(44.046618,-91.643111),
+new google.maps.LatLng(44.046762,-91.643027),
+new google.maps.LatLng(44.046759,-91.642998),
+new google.maps.LatLng(44.047104,-91.642807),
+new google.maps.LatLng(44.047121,-91.642840),
+new google.maps.LatLng(44.047188,-91.642805),
+new google.maps.LatLng(44.047354,-91.643411)
+];
+var  myPerfCenterShape = new google.maps.Polygon({
+	paths:  myPerformanceCenter,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#ff7400',
+	fillOpacity: 0.35
+  });
+var pac = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Performing Arts Center</strong><br /><br /><img src='images/perf_arts_ctr.jpg'></div><div style='padding: 0px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;460 Washington Street<br />&nbsp;&nbsp;&nbsp;<a href ='http://www.winona.edu/arts/'>Performing art academic, events center</a><br /><br />&nbsp;&nbsp;&nbsp;Departments:<br />&nbsp;&nbsp;&nbsp;Dorothy B. Magnus Open Stage Theatre<br />&nbsp;&nbsp;&nbsp;Main Stage Theatre<br />&nbsp;&nbsp;&nbsp;Recital Hall<br />&nbsp;&nbsp;&nbsp;Communications Studies<br />&nbsp;&nbsp;&nbsp;Dance<br />&nbsp;&nbsp;&nbsp;Music<br />&nbsp;&nbsp;&nbsp;Theatre</font></div>";
+
+ addPolymouseover(myPerfCenterShape);
+addPolygonClick(myPerfCenterShape,pac);	
+ 
+ var shepardhallPoints = [
+new google.maps.LatLng(44.048848,-91.644991),
+new google.maps.LatLng(44.048831,-91.644999),
+new google.maps.LatLng(44.048831,-91.645015),
+new google.maps.LatLng(44.048382,-91.645256),
+new google.maps.LatLng(44.048336,-91.645087),
+new google.maps.LatLng(44.048810,-91.644843),
+new google.maps.LatLng(44.048848,-91.644988)
+];
+var  shepardhallShape = new google.maps.Polygon({
+	paths:  shepardhallPoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#48036F',
+	fillOpacity: 0.35
+  });
+var shepard = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Shepard Hall</strong><br /><br /><img src='images/morey_shepard.jpg'></div><div style='padding: 0px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;261 W. Sanborn Street<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/housing/6206.asp'>Coed residence hall</a></font></div>";
+
+addPolymouseover(shepardhallShape);
+addPolygonClick(shepardhallShape,shepard);	
+ 
+ var moreyhallPoints = [
+new google.maps.LatLng(44.048688,-91.645911),
+new google.maps.LatLng(44.048499,-91.645184),
+new google.maps.LatLng(44.048386,-91.645259),
+new google.maps.LatLng(44.048576,-91.645967),
+new google.maps.LatLng(44.048684,-91.645913)
+];
+var  moreyhallShape = new google.maps.Polygon({
+	paths:  moreyhallPoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#48036F',
+	fillOpacity: 0.35
+  });
+  
+addPolymouseover(moreyhallShape);
+ 	var morey = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Morey Hall</strong><br /><br /><img src='images/morey_shepard.jpg'></div><div style='padding: 0px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;261 W. Sanborn Street<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/housing/6206.asp'>Coed residence hall</a></font></div>";
+addPolygonClick(moreyhallShape,morey);	
+	
+ var richardshallPoints = [
+new google.maps.LatLng(44.048945,-91.645326),
+new google.maps.LatLng(44.049091,-91.645256),
+new google.maps.LatLng(44.049197,-91.645648),
+new google.maps.LatLng(44.048692,-91.645905),
+new google.maps.LatLng(44.048661,-91.645782),
+new google.maps.LatLng(44.049008,-91.645581),
+new google.maps.LatLng(44.048947,-91.645337)
+];
+var richardshallShape = new google.maps.Polygon({
+	paths: richardshallPoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#48036F',
+	fillOpacity: 0.35
+  });
+  
+  addPolymouseover(richardshallShape);
+  var richards = "<div style='padding:0px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Richards Hall</strong><br /><br /><img src='images/richards.jpg'></div><div style='padding: 0px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;404 Huff Street<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/housing/6206.asp'>Coed residence hall</a></font></div>";
+addPolygonClick(richardshallShape,richards);
+ 
+ 
+ var prentisshallPoints = [
+new google.maps.LatLng(44.048102,-91.645675),
+new google.maps.LatLng(44.048077,-91.645578),
+new google.maps.LatLng(44.048054,-91.645594),
+new google.maps.LatLng(44.048042,-91.645562),
+new google.maps.LatLng(44.048058,-91.645559),
+new google.maps.LatLng(44.047969,-91.645251),
+new google.maps.LatLng(44.047722,-91.645385),
+new google.maps.LatLng(44.047798,-91.645648),
+new google.maps.LatLng(44.047927,-91.645575),
+new google.maps.LatLng(44.047944,-91.645651),
+new google.maps.LatLng(44.047929,-91.645659),
+new google.maps.LatLng(44.047956,-91.645755),
+new google.maps.LatLng(44.048098,-91.645675)
+];
+ var prentisshallShape = new google.maps.Polygon({
+	paths: prentisshallPoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#48036F',
+	fillOpacity: 0.35
+  });
+  
+ addPolymouseover(prentisshallShape);
+
+var prentiss = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Prentiss Hall</strong><br /><br /><img src='images/prentiss.jpg'></div><div style='padding: 0px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;265 W. King Street<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/housing/6197.asp'>Male residence hall</a></font></div>";
+
+addPolygonClick(prentisshallShape,prentiss);
+  
+var lucashallPoints = [
+new google.maps.LatLng(44.048202,-91.646096),
+new google.maps.LatLng(44.048129,-91.645822),
+new google.maps.LatLng(44.048114,-91.645828),
+new google.maps.LatLng(44.048098,-91.645771),
+new google.maps.LatLng(44.048125,-91.645755),
+new google.maps.LatLng(44.048104,-91.645677),
+new google.maps.LatLng(44.047954,-91.645761),
+new google.maps.LatLng(44.047979,-91.645841),
+new google.maps.LatLng(44.047998,-91.645830),
+new google.maps.LatLng(44.048010,-91.645884),
+new google.maps.LatLng(44.047881,-91.645954),
+new google.maps.LatLng(44.047958,-91.646233),
+new google.maps.LatLng(44.048201,-91.646101)
+];
+  var lucashallShape = new google.maps.Polygon({
+	paths: lucashallPoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#48036F',
+	fillOpacity: 0.35
+  });
+  
+addPolymouseover(lucashallShape);
+
+var lucas = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Lucas Hall</strong><br /><br /><img src='images/lucas.jpg'></div><div style='padding: 0px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;265 W. King Street<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/housing/6197.asp'>Female residence hall</a></font></div>";
+
+addPolygonClick(lucashallShape,lucas);
+
+
+  var sheehanPoints = [
+new google.maps.LatLng(44.046801,-91.646564),
+new google.maps.LatLng(44.046783,-91.646509),
+new google.maps.LatLng(44.046761,-91.646524),
+new google.maps.LatLng(44.046757,-91.646505),
+new google.maps.LatLng(44.046783,-91.646490),
+new google.maps.LatLng(44.046711,-91.646271),
+new google.maps.LatLng(44.046689,-91.646284),
+new google.maps.LatLng(44.046684,-91.646274),
+new google.maps.LatLng(44.046706,-91.646258),
+new google.maps.LatLng(44.046689,-91.646203),
+new google.maps.LatLng(44.046548,-91.646280),
+new google.maps.LatLng(44.046557,-91.646326),
+new google.maps.LatLng(44.046570,-91.646324),
+new google.maps.LatLng(44.046640,-91.646564),
+new google.maps.LatLng(44.046655,-91.646560),
+new google.maps.LatLng(44.046660,-91.646575),
+new google.maps.LatLng(44.046648,-91.646588),
+new google.maps.LatLng(44.046663,-91.646644),
+new google.maps.LatLng(44.046802,-91.646568)
+];
+  var sheehanShape = new google.maps.Polygon({
+	paths: sheehanPoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#48036F',
+	fillOpacity: 0.35
+  });
+  
+ addPolymouseover(sheehanShape);
+	
+var sheehan = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Sheehan Hall</strong><br /><br /><img src='images/sheehan.jpg'></div><div style='padding: 0px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;264 W. Mark Street<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/housing/6204.asp'>Female residence hall</a><br /><br />&nbsp;&nbsp;&nbsp;Departments:<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/security/'>WSU Security</a></font></div>";
+
+addPolygonClick(sheehanShape,sheehan);
+
+						
+var myStark = [
+new google.maps.LatLng(44.048742,-91.643403),
+new google.maps.LatLng(44.048696,-91.643239),
+new google.maps.LatLng(44.048723,-91.643229),
+new google.maps.LatLng(44.048733,-91.643204),
+new google.maps.LatLng(44.048736,-91.643188),
+new google.maps.LatLng(44.048740,-91.643167),
+new google.maps.LatLng(44.048742,-91.643159),
+new google.maps.LatLng(44.048750,-91.643140),
+new google.maps.LatLng(44.048763,-91.643121),
+new google.maps.LatLng(44.048779,-91.643108),
+new google.maps.LatLng(44.048794,-91.643102),
+new google.maps.LatLng(44.048816,-91.643094),
+new google.maps.LatLng(44.048831,-91.643097),
+new google.maps.LatLng(44.048846,-91.643097),
+new google.maps.LatLng(44.048860,-91.643100),
+new google.maps.LatLng(44.048877,-91.643113),
+new google.maps.LatLng(44.048887,-91.643111),
+new google.maps.LatLng(44.048910,-91.643180),
+new google.maps.LatLng(44.049057,-91.643102),
+new google.maps.LatLng(44.049136,-91.643395),
+new google.maps.LatLng(44.049078,-91.643430),
+new google.maps.LatLng(44.049145,-91.643685),
+new google.maps.LatLng(44.049139,-91.643690),
+new google.maps.LatLng(44.049155,-91.643752),
+new google.maps.LatLng(44.048877,-91.643894),
+new google.maps.LatLng(44.048742,-91.643411)
+];
+
+ var StarkShape = new google.maps.Polygon({
+	paths: myStark,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#ff7400',
+	fillOpacity: 0.35
+  });
+ 
+ var stark = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Stark Hall</strong><br /><br /><img src='images/stark.jpg'></div><div style='padding: 0px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;390 Winona Street<br />&nbsp;&nbsp;&nbsp;Nursing, engineering academic, lab space<br /><br />&nbsp;&nbsp;&nbsp;Departments:<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/college_nursing/conhs.html'>College of Nursing</a><br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/engineering/'>Miller Brothers School of Engineering</a></font></div>";
+
+ addPolymouseover(StarkShape);
+ addPolygonClick(StarkShape,stark);
+						
+var myScienLab = [
+new google.maps.LatLng(44.049238,-91.644140),
+new google.maps.LatLng(44.049230,-91.644098),
+new google.maps.LatLng(44.049269,-91.644076),
+new google.maps.LatLng(44.049242,-91.643969),
+new google.maps.LatLng(44.049215,-91.643980),
+new google.maps.LatLng(44.049191,-91.643894),
+new google.maps.LatLng(44.049033,-91.643980),
+new google.maps.LatLng(44.048910,-91.644028),
+new google.maps.LatLng(44.048740,-91.643400),
+new google.maps.LatLng(44.048644,-91.643459),
+new google.maps.LatLng(44.048671,-91.643663),
+new google.maps.LatLng(44.048521,-91.643754),
+new google.maps.LatLng(44.048582,-91.644237),
+new google.maps.LatLng(44.048540,-91.644264),
+new google.maps.LatLng(44.048594,-91.644478),
+new google.maps.LatLng(44.049230,-91.644140)
+];
+ var ScienceShape = new google.maps.Polygon({
+	paths: myScienLab,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#ff7400',
+	fillOpacity: 0.35
+  });
+
+var slc = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Science Lab Center (SLC)</strong><br /><br /><img src='images/science_lab_ctr.jpg'></div><div style='padding: 0px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;400 Winona Street<br />&nbsp;&nbsp;&nbsp;Science academic, lab space<br /><br />&nbsp;&nbsp;&nbsp;Departments:<br />&nbsp;&nbsp;&nbsp;SLC Lecture Hall<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/college_science/index.asp'>College of Science & Engineering</a></font></div>";
+  
+addPolymouseover(ScienceShape);
+addPolygonClick(ScienceShape,slc);	
+
+var myPasteur = [
+new google.maps.LatLng(44.048517,-91.643744),
+new google.maps.LatLng(44.048478,-91.643760),
+new google.maps.LatLng(44.048470,-91.643727),
+new google.maps.LatLng(44.047969,-91.643996),
+new google.maps.LatLng(44.047904,-91.643760),
+new google.maps.LatLng(44.048563,-91.643406),
+new google.maps.LatLng(44.048575,-91.643438),
+new google.maps.LatLng(44.048621,-91.643406),
+new google.maps.LatLng(44.048636,-91.643454),
+new google.maps.LatLng(44.048659,-91.643658),
+new google.maps.LatLng(44.048532,-91.643738)
+];
+ var PasteurShape = new google.maps.Polygon({
+	paths: myPasteur,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#ff7400',
+	fillOpacity: 0.35
+  });
+  
+ addPolymouseover(PasteurShape);
+var pasteur = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Pasteur Hall</strong><br /><br /><img src='images/pasteur.jpg'></div><div style='padding: 0px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;203 W. Sanborn Street<br />&nbsp;&nbsp;&nbsp;Science academic, lab space<br /><br />&nbsp;&nbsp;&nbsp;Departments:<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/college_science/index.asp'>College of Science & Engineering</a><br />&nbsp;&nbsp;&nbsp;Biology<br />&nbsp;&nbsp;&nbsp;Chemistry<br />&nbsp;&nbsp;&nbsp;Geoscience<br />&nbsp;&nbsp;&nbsp;Physics</font></div>";
+addPolygonClick(PasteurShape,pasteur);
+
+var faciliPoints = [
+new google.maps.LatLng(44.045363,-91.644124),
+new google.maps.LatLng(44.045436,-91.644377),
+new google.maps.LatLng(44.045534,-91.644328),
+new google.maps.LatLng(44.045602,-91.644562),
+new google.maps.LatLng(44.045432,-91.644653),
+new google.maps.LatLng(44.045444,-91.644688),
+new google.maps.LatLng(44.045436,-91.644701),
+new google.maps.LatLng(44.045469,-91.644846),
+new google.maps.LatLng(44.045338,-91.644913),
+new google.maps.LatLng(44.045154,-91.644234),
+new google.maps.LatLng(44.045466,-91.644065),
+new google.maps.LatLng(44.045444,-91.643986),
+new google.maps.LatLng(44.045419,-91.644001),
+new google.maps.LatLng(44.045310,-91.643620),
+new google.maps.LatLng(44.045123,-91.643719),
+new google.maps.LatLng(44.045170,-91.643880),
+new google.maps.LatLng(44.045250,-91.643839),
+new google.maps.LatLng(44.045333,-91.644135)
+];
+ var faciliShape = new google.maps.Polygon({
+	paths:faciliPoints,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#ff7400',
+	fillOpacity: 0.35
+  });
+  
+ addPolymouseover(faciliShape);
+var facili = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Facilities Services</strong><br /><br /><img src='images/facilities_svcs.jpg'></div><div style='padding: 0px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;175 W. Mark Street<br />&nbsp;&nbsp;&nbsp;P.O. Box 5838<br />&nbsp;&nbsp;&nbsp;Winona, MN 55987<br />&nbsp;&nbsp;&nbsp;<br /><br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/facilities'>Facilities support services</a><br />&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;<a href='mailto:facilities@winona.edu'>facilities@winona.edu</a><br />&nbsp;&nbsp;&nbsp;<a href='tel:5074575045'>507.457.5045 (answered 24 hours a day)</a><br />&nbsp;&nbsp;&nbsp;507.457.2623(fax)<br />&nbsp;&nbsp;&nbsp;</font></div>";
+addPolygonClick(faciliShape,facili);
+
+
+var myWellness = [
+new google.maps.LatLng(44.047225,-91.641936),
+new google.maps.LatLng(44.047171,-91.641759),
+new google.maps.LatLng(44.046728,-91.641968),
+new google.maps.LatLng(44.046681,-91.641871),
+new google.maps.LatLng(44.046535,-91.641941),
+new google.maps.LatLng(44.046400,-91.641512),
+new google.maps.LatLng(44.046122,-91.641662),
+new google.maps.LatLng(44.046246,-91.642102),
+new google.maps.LatLng(44.046280,-91.642097),
+new google.maps.LatLng(44.046311,-91.642182),
+new google.maps.LatLng(44.046304,-91.642231),
+new google.maps.LatLng(44.046304,-91.642268),
+new google.maps.LatLng(44.046315,-91.642300),
+new google.maps.LatLng(44.046342,-91.642317),
+new google.maps.LatLng(44.046365,-91.642333),
+new google.maps.LatLng(44.047213,-91.641936)
+];
+var WellnessShape = new google.maps.Polygon({
+	paths: myWellness,
+	map: map,
+	strokeColor: '#48036F',
+	strokeWeight: 1,
+	fillColor: '#ff7400',
+	fillOpacity: 0.35
+  });
+  
+  
+  addPolymouseover(WellnessShape);
+  
+var iwc = "<div style='padding:0px; width:255px; background:#660099; color:#FFFFFF;'><br /><strong>&nbsp;&nbsp;&nbsp;Integrated Wellness Complex</strong><br /><br /><img src='images/integrated_wellness.jpg'></div><div style='padding: 0px; background:#CCCCCC;'><font size=2>&nbsp;&nbsp;&nbsp;117 W. Sanborn Street<br />&nbsp;&nbsp;&nbsp;Student health services, fitness, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recreation<br /><br />&nbsp;&nbsp;&nbsp;Departments:<br />&nbsp;&nbsp;&nbsp;Counseling Center<br />&nbsp;&nbsp;&nbsp;<a href='http://www.winona.edu/healthservices/'>Student Health Services</a><br />&nbsp;&nbsp;&nbsp;Fitness Center<br />&nbsp;&nbsp;&nbsp;Intercollegiate Athletics<br />&nbsp;&nbsp;&nbsp;Intramurals<br />&nbsp;&nbsp;&nbsp;Health, Exercise, Rehabilitative Sciences</font></div>";
+	
+addPolygonClick(WellnessShape,iwc);
+ } 
+   checked = false;
+  function seleChoice() {
+	if(checked == false){
+		checked = true
+	}
+	else{
+		checked = false
+	}
+	for(var i = 0; i < document.getElementById('myform').elements.length; i++){
+		document.getElementById('myform').elements[i].checked = checked;
+		 document.getElementById('myform').elements[i].click(); 
+	}
+  
+  }
+
+
+
+  
+ 
+ 
+    function mainCampus() {
+    map.setCenter(new google.maps.LatLng(44.047429,-91.643754));
+    map.setZoom(17);
+  }
+  
+   function westCampus() {
+    map.setCenter(new google.maps.LatLng(44.051137,-91.670405));
+    map.setZoom(17);
+  }
+  
+   function eastCampus() {
+    map.setCenter(new google.maps.LatLng(44.041883,-91.634672));
+    map.setZoom(17);
+  }
+
+  function traffic() {
+  if(document.getElementById("trafButton").checked) {
+	trafficLayer.setMap(map);
+	 map.setZoom(17);
+	currentLayer = trafficLayer.setMap;
+  } else {
+	 trafficLayer.setMap(null);
+	}
+  }
+  
+  function weather() {
+	if(document.getElementById("weatButton").checked){
+     weatherLayer.setMap(map);
+	  map.setZoom(17);
+    currentLayer = weatherLayer.setMap;
+	} else {
+		  weatherLayer.setMap(null);
+	}
+  }
+  
+
+
+function parking() {
+	if(document.getElementById("parButton").checked) {
+	url = "https://xwebdev.winona.edu/webteam/ric/kmz/parking.kmz";
+	parkingLayer = new google.maps.KmlLayer(url, {map: map});
+    currentLayer = parkingLayer;
+	} else {
+		parkingLayer.setMap(null);
+	}
+
+}
+
+function sports() {
+	if(document.getElementById("sporButton").checked) {
+	url = "https://xwebdev.winona.edu/webteam/ric/kmz/athleticfields.kmz";
+	sportsLayer = new google.maps.KmlLayer(url, {map: map});
+    currentLayer = sportsLayer;
+	} else {
+		sportsLayer.setMap(null);
+	}
+}
+
+function cBlue() {
+	if(document.getElementById("cblueButton").checked) {
+	url = "https://xwebdev.winona.edu/webteam/ric/kmz/CallBlue.kmz";
+	blueLayer = new google.maps.KmlLayer(url, {map: map});
+    currentLayer = blueLayer;
+	} else {
+		blueLayer.setMap(null);
+	}
+}
+
+
+function cLabels() {
+	if(document.getElementById("labelButton").checked) {
+	url = "https://xwebdev.winona.edu/webteam/ric/kmz/labels.kmz";
+	blueLayer = new google.maps.KmlLayer(url, {map: map});
+    currentLayer = blueLayer;
+	} else {
+		blueLayer.setMap(null);
+	}
+}
+  
+
+
+  function kmlKeyUp(e) {
+    var keyCode;
+  
+    if (window.event) {
+        keyCode = window.event.keyCode;
+    } else if (variable) {
+        keyCode = e.which;
+    }
+  
+    if (keyCode == 17) {
+        document.getElementById("kmlUrl").blur();
+        document.getElementById("kmlButton").click();
+    }
+  
+
+  
+  }
+  
+
+
+function mapCenter(selectedValue) {
+
+	switch(selectedValue){
+		case "main":
+			mainCampus()
+			slidfast.ui.slideTo('home-page')
+		break;
+		case "east":
+			eastCampus()
+			slidfast.ui.slideTo('home-page')
+		break;
+		case "west":
+			westCampus()
+			slidfast.ui.slideTo('home-page')
+		break;
+		case "map":
+			slidfast.ui.slideTo('home-page')
+		break;
+		case "legend":
+			slidfast.ui.slideTo('products-page')
+		break;
+		case "features":
+			slidfast.ui.slideTo('about-page')
+		break;
+		default:
+			mainCampus()
+		break;
+	}
+}
+
+	
+
+ function selecAll() {
+	// if(document.getElementById("sAllButton").checked=true) {
+		document.getElementById("traffButton").checked=true
+		traffic();
+		document.getElementById("weathButton").checked=true
+		weather();
+		document.getElementById("sporButton").checked=true
+		sports();
+		document.getElementById("parButton").checked=true
+		parking();
+		document.getElementById("cblueButton").checked=true
+		cBlue();
+		document.getElementById("labelButton").checked=true
+		cLabels();
+	//}
+	
+  }
+
+
+</script>
+</head>
+<body onload="initialize(), selecAll()">
+<div id="browser">
+    <nav class="primary">
+        <ul>
+            <li><a href="#sf-home-page" onclick="slidfast.ui.slideTo('home-page')">Map</a></li>
+            <li><a href="#sf-products-page" onclick="slidfast.ui.slideTo('products-page')">Legend</a></li>
+            <li><a href="#sf-about-page" onclick="slidfast.ui.slideTo('about-page')">Features</a></li>
+			<li><a href="#" onclick="mainCampus(), slidfast.ui.slideTo('home-page');">Main Campus</a></li>
+			<li><a href="#" onclick="eastCampus(), slidfast.ui.slideTo('home-page');">East Campus</a></li>
+			<li><a href="#" onclick="westCampus(), slidfast.ui.slideTo('home-page');">West Campus</a></li>
+			<li id="park"><a href="#">Parking</a></li>
+        </ul>
+		<select onChange="mapCenter(this.value);">
+			<option value="">Please select</option>
+			<option value="map"><a href="#sf-home-page" onclick="slidfast.ui.slideTo('home-page')">Map</a></option>
+			<option value="legend"><a href="#sf-products-page" onChange="slidfast.ui.slideTo('products-page');">Legend</a></option>
+			<option value="features"><a href="#sf-about-page" onChange="slidfast.ui.slideTo('about-page');">Features</a></option>
+			<option value="main">Main Campus</option>
+			<option value="east">East Campus</option>
+			<option value="west">West Campus</option>
+		</select>
+    </nav>
+
+    <div id="page-container">
+
+        <div id="front" class="normal">
+
+            <div id="home-page" class="page"></div>
+
+            <div id="products-page" class="page stage-right">
+                <ul>
+							<table  style="color: black">
+								<tr>
+									<td id="gold" width="30" bgcolor="gold"></td>
+									<td align="center" >Gold Parking</td>
+								</tr>
+								<tr>
+									<td id="silver" width="30" bgcolor="silver"></td>
+									<td align="center">Silver Parking</td>
+								</tr>
+								<tr>
+									<td id="purple" width="30" bgcolor="purple"></td>
+									<td align="center">Purple Parking</td>
+								</tr>
+								<tr>
+									<td id="yellow" width="30" bgcolor="yellow"></td>
+									<td align="center">Cycle Parking</td>
+								</tr>
+								<tr>
+									<td id="marron" width="30" bgcolor="red"></td>
+									<td align="center">Metered Parking</td>
+								</tr>
+								<tr>
+									<td id="bus"><img src="images/bus.png" width="30" height="40" alt="Winona Logo"></td>
+									<td align="center">Shuttle Bus Stop</td>
+								</tr>
+								<tr>
+									<td id="courtesy"><img src="images/phone.png" width="30" height="40" alt="Winona Logo"></td>
+									<td align="center">Courtesy Phone</td>
+								</tr>
+								<tr>
+									<td id="emergency"><img src="images/codeBlue.png" width="30" height="40" alt="Winona Logo"></td>
+									<td align="center">Call Blues</td>
+								</tr>
+						  </table >  
+						</a>
+					</ul>
+            </div>
+
+            <div id="about-page" class="page stage-left">
+                 <ul>
+					<li> 
+						<form name="ckmapLayers" id="myform">
+						<table style="color: black">
+								<tr>
+								  <td><input onclick="traffic()" type="checkbox" id="traffButton" /></td>
+								  <td align="left">Traffic</td>
+								</tr>
+								<tr>
+								  <td><input onclick="weather()" type="checkbox" name="layer" id="weathButton" /></td>
+								  <td align="left">Weather</td>
+								</tr>
+								<tr>
+								  <td><input onclick="parking()" type="checkbox" name="layer" id="parButton"/></td>
+								  <td align="left">Parking</td>
+								</tr>
+								 <tr>
+								  <td><input onclick="sports()" type="checkbox" name="layer" id="sporButton" /></td>
+								  <td align="left">Sports</td>
+								</tr>
+								<tr>
+								  <td><input onclick="cBlue()" type="checkbox" name="layer" id="cblueButton" /></td>
+								  <td align="left">Blue Lights</td>
+								</tr>
+								<tr>
+								  <td><input onclick="cLabels()" type="checkbox" name="layer" id="labelButton" /></td>
+								  <td align="left">Labels</td>
+								</tr>
+							</table>
+						</form>
+					</li>
+                </ul>
+            </div>
+        </div>
+        <div id="back" class="flipped">
+
+            <div id="contact-page" class="page">
+                <h1>Contact Page</h1>
+                <a href="demo/contact-map.html" class="fetch">Check out our map!</a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="slidfast.js"></script>
+<script type="text/javascript">
+
+    slidfast({
+        defaultPageID:'home-page',
+        touchEnabled: false,
+        singlePageModel: true,
+        optimizeNetwork: true
+    });
+
+//hide the flip functionality on certain devices/browsers
+var ua = navigator.userAgent.toLowerCase();
+var hidestuff = ua.indexOf("android") > -1 || ua.indexOf("opera") > -1  || ua.indexOf("fennec") > -1;
+if(hidestuff) {
+  //hide any 360 flip stuff
+  document.querySelector("#back").style.display = 'none';
+  document.querySelector("#flip-button").style.display = 'none';
+}
+</script>
+</body>
+</html>
