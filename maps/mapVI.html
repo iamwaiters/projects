@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #div1 { height: 100% }
+    </style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="map.js"></script>
+	<link rel="stylesheet" media="all" href="demo.css" />
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script> 
+  </head>
+ <body onload="initialize()">
+	<nav class="primary">
+        <ul>
+            <li><a href="#sf-home-page" id="lnk1">Map</a></li>
+            <li><a href="#sf-products-page" id="lnk2" >Legend</a></li>
+            <li><a href="#sf-about-page" id="lnk3" onclick="slidfast.ui.slideTo('about-page')">Features</a></li>
+			<li><a href="#" id="lnk4" onclick="mainCampus();">Main Campus</a></li>
+			<li><a href="#" id="lnk5" onclick="eastCampus();">East Campus</a></li>
+			<li><a href="#" id="lnk6" onclick="westCampus();">West Campus</a></li>
+        </ul>
+		<select onChange="mapCenter(this.value);">
+			<option value="">Please select</option>
+			<option value="map"><a id="lnk4" href="#sf-home-page" onclick="slidfast.ui.slideTo('home-page')">Map</a></option>
+			<option value="legend"><a id="lnk5" href="#sf-products-page" onChange="slidfast.ui.slideTo('products-page');">Legend</a></option>
+			<option value="features"><a id="lnk6" href="#sf-about-page" onChange="slidfast.ui.slideTo('about-page');">Features</a></option>
+			<option value="main">Main Campus</option>
+			<option value="east">East Campus</option>
+			<option value="west">West Campus</option>
+		</select>
+    </nav>
+    <div id="div1"/></div>
+	<div id="div2">
+		<ul>
+							<table  style="color: black">
+								<tr>
+									<td id="gold" width="30" bgcolor="gold"></td>
+									<td align="center" >Gold Parking</td>
+								</tr>
+								<tr>
+									<td id="silver" width="30" bgcolor="silver"></td>
+									<td align="center">Silver Parking</td>
+								</tr>
+								<tr>
+									<td id="purple" width="30" bgcolor="purple"></td>
+									<td align="center">Purple Parking</td>
+								</tr>
+								<tr>
+									<td id="yellow" width="30" bgcolor="yellow"></td>
+									<td align="center">Cycle Parking</td>
+								</tr>
+								<tr>
+									<td id="marron" width="30" bgcolor="red"></td>
+									<td align="center">Metered Parking</td>
+								</tr>
+								<tr>
+									<td id="bus"><img src="images/bus.png" width="30" height="40" alt="Winona Logo"></td>
+									<td align="center">Shuttle Bus Stop</td>
+								</tr>
+								<tr>
+									<td id="courtesy"><img src="images/phone.png" width="30" height="40" alt="Winona Logo"></td>
+									<td align="center">Courtesy Phone</td>
+								</tr>
+								<tr>
+									<td id="emergency"><img src="images/codeBlue.png" width="30" height="40" alt="Winona Logo"></td>
+									<td align="center">Call Blues</td>
+								</tr>
+						  </table >  
+						</a>
+					</ul>
+	</div>
+	<div id="div3">
+		 <ul>
+			<li> 
+				<form name="ckmapLayers" id="myform">
+					<table style="color: black">
+						<tr>
+						  <td><input onclick="traffic()" type="checkbox" id="traffButton" /></td>
+						  <td align="left">Traffic</td>
+						</tr>
+						<tr>
+						  <td><input onclick="weather()" type="checkbox" name="layer" id="weathButton" /></td>
+						  <td align="left">Weather</td>
+						</tr>
+						<tr>
+						  <td><input onclick="parking()" type="checkbox" name="layer" id="parButton"/></td>
+						  <td align="left">Parking</td>
+						</tr>
+						 <tr>
+						  <td><input onclick="sports()" type="checkbox" name="layer" id="sporButton" /></td>
+						  <td align="left">Sports</td>
+						</tr>
+						<tr>
+						  <td><input onclick="cBlue()" type="checkbox" name="layer" id="cblueButton" /></td>
+						  <td align="left">Blue Lights</td>
+						</tr>
+						<tr>
+						  <td><input onclick="cLabels()" type="checkbox" name="layer" id="labelButton" /></td>
+						  <td align="left">Labels</td>
+						</tr>
+					</table>
+				</form>
+			</li>
+        </ul>
+	</div>
+  </body>
+</html>
