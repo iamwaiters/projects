@@ -1,0 +1,46 @@
+/**************************************************************
+#    First functions in R while using source function
+
+
+****************************************************************/
+f1 <- function(a,b){
+  Result1 = a-b
+  Resutl2 = a/b
+  list(Difference=Result1,ratio=Resutl2)
+}
+
+
+sphere.volume <- function(r){
+  
+  result1 = 4/3*pi*r^3
+  list(Volume=result1)
+}
+
+
+
+sem<- function(x){
+  n = length(na.omit(x))
+  se = sd(x.na.rm=TRUE)/sqrt(n)
+  return (se)
+}
+
+
+
+my.plot <- function(...., pch.new=21, bg.new='gray', cex.new=.75) {
+  plot(..., pch=pch.new, bg=bg.new, cex=cex.new)
+  
+}
+
+mydb <- function(dbuser, dbChoice) {
+
+conn <- dbConnect(MySQL(), user=dbuser, password='******', host='localhost', dbname=dbChoice)
+
+
+}
+
+num.summary <- function() {
+  original = summary(x)
+  s = sd(x, na.rm = TRUE)
+  n = length(na.omit(x))
+  list(c(original, "Std Dev" = s, "Sample Size" = n, "SE of Mean" = se))
+}
