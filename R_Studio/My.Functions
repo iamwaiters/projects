@@ -25,6 +25,30 @@ sem<- function(x){
 }
 
 
+lcm <- function(a,b){
+  if(a>b){
+    a<- a +b
+    b<- a-b
+    a<- a-b
+  }
+  i<- 2
+  
+  comb <- 1
+  while(i<=a){
+    if(a %% i == 0 && b %% i == 0){
+      a<-a/i
+      b<-b/i
+      
+      comb<-comb*i
+    }
+  else{
+    i<- i +1
+  }
+  }
+  
+  return(comb*a*b)
+}
+
 
 my.plot <- function(...., pch.new=21, bg.new='gray', cex.new=.75) {
   plot(..., pch=pch.new, bg=bg.new, cex=cex.new)
