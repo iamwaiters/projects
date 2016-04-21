@@ -1,0 +1,199 @@
+<?php /****************************************************************************************************************************
+
+	File Name: readysteadysnippet.php
+	Version: 1.0
+	Author: Ric Waiters
+	Description:  Scraps http://www.readysteadybook.com/BookReviews.aspx for book review snippets
+	
+************************************************************************************************************************************/
+require_once('Connections/t10_books.php'); 	
+require_once('global_functions.php');	
+require_once('book_functions.php');
+mysql_select_db("toptenbooks", $t10);
+/*************************************************************************
+Pull URL from db. delete if it does not work
+******************************************************************************/
+
+$main_qry = "select * from temp where status_id=8 order by id limit 1";
+$main_results = mysql_query($main_qry, $t10);
+$row_main = mysql_fetch_assoc($main_results);
+$id=$row_main['id'];
+$URL= $row_main['text'];
+$status_id= $row_main['status_id'];
+set_time_limit(0);
+
+if($id == '') {
+	print "moo<br>\n";
+	exit(5);
+}
+
+$review_url=$URL;
+//print $review_url; exit;
+
+$contents=file_get_contents($review_url);
+
+$borked = 0;
+		while (!$contents && $borked < 2) {
+			sleep(3);
+			print "Can't connect, retrying (".($borked+1).")<br>\n";
+			$contents= file_get_contents($review_url);
+			$borked++;
+		}
+		if(!$contents) {
+			print "it broke (can't open: ".$review_url.")<br>\n";
+			$qry="delete from temp where (id=$id)";
+			mysql_query($qry, $t10) or print mysql_error()."<br>\n";
+		}
+		
+//$url="http://www.readysteadybook.com/BookReview.aspx?isbn=0701177969";
+//$file=file_get_contents($url);
+
+$file=substr($contents,$start=strpos($contents,'<h2>Book Review</h2>'),strpos($contents,'<h2>Other books of interest</h2>')-$start);
+
+//print $content; exit;
+
+$file_array=html_array_parse($file, 1, '<img id="imgBookCover"');
+//print_r ($file_array); exit;
+
+$temp='';
+$counter=0;
+$html_array=array();
+$array_count=count($file_array);
+while ((substr($temp,0, 23)!='<div class="bookmonth">') && ($counter < $array_count)) {
+		$temp=trim(array_shift($file_array));
+		
+		if ((substr($temp,0,1) != '<')) {
+			$html_array[]=$temp;
+			
+		}
+		$counter++;
+
+	}
+//print_r ($html_array); exit;
+/*************************************************************************
+Loop through array. both isbn 10 & 13, title, and boolean for review
+******************************************************************************/
+
+$boolean=false;
+$rev_start=+1;
+foreach ($html_array as $key => $value) {
+	if (substr($value,0,2)=='by'){
+		$title=$html_array[$key-1];
+		//print $title; exit;
+		}
+	if (substr($value,0,7)=='ISBN-10'){
+		$isbn_10=$html_array[$key+1];
+		$isbn_10=str_replace(':', '', $isbn_10);
+		$isbn_10=trim($isbn_10);
+		//print $isbn_10; exit;
+		}
+	if (substr($value,0,2)=='by'){
+		$temp_name=$html_array[$key+1];
+		$space_pos=strpos($temp_name, ' ');
+		$first_name=substr($temp_name, 0,$space_pos);
+		$first_name=trim($first_name);
+		$last_name=substr($temp_name, $space_pos + 1);
+		$author_name=$last_name.', '.$first_name;
+		//print $author_name; exit;
+		}
+	if (substr($value,0,7)=='ISBN-13'){
+		$isbn_13=$html_array[$key+1];
+		$isbn_13=str_replace(':', '', $isbn_13);
+		$isbn_13=trim($isbn_13);
+		$isbn_check=isbn13to10($isbn_13);
+		//print $isbn; exit;
+		
+		if(!$isbn_check){
+			$isbn_check=checkIsbn($isbn_13);
+			if ($isbn_check){
+				$isbn_check=$isbn_13;
+			}
+		//print $isbn_13; exit;
+		}
+		}
+	
+	if	(substr($value,0,16)=='Publication Date'){
+		$pub_date=$html_array[$key+1];
+		$pub_date=str_replace(':', '', $pub_date);
+		$pub_date=trim($pub_date);
+		//print $pub_date; exit;		
+		}
+	if ($value == 'by') {
+		$review='';
+		$rev_start=$key+1;
+		}
+	if ($value == '-- Reviewed by') {
+		$boolean=false;
+	}
+	if ($boolean) {
+		$review.=' '.$value;
+	}
+	
+	if ($key == $rev_start){
+		$boolean=true;
+	}	
+
+	
+}
+$review=utf8_encode($review);
+//print $review; exit;
+
+/*************************************************************************
+Insert into db based on isbn check!
+******************************************************************************/
+if (!$isbn_check) {
+		$review=mysql_real_escape_string($review);
+		$qry="SELECT source_url FROM temp_reviews where source_url='$review_url'";
+		$rst=mysql_query($qry,$t10) or print mysql_error();
+		$rows=mysql_fetch_assoc($rst);
+		$temp_rev=$rows['source_url'];
+		mysql_free_result($rst);
+				
+		if($temp_rev == '') {
+		$title=mysql_real_escape_string($title);
+		$qry="INSERT INTO temp_reviews (name, review_text, source_url, author_name, source_id, status_id, pubdate) VALUES ('$title', '$review', '$review_url', '$author_name', 12943, 2, $pub_date)";
+					print "Inserting into db, book title: $title<br>\n";
+					mysql_query($qry, $t10) or print mysql_error()."<br>\n";
+		}
+		else {
+			print "already in the database<br>\n";
+		}
+	
+	}
+	else	{
+		$snippet=$review;
+		$snippet=substr($snippet,0,255);
+		$snippet=trim_last_word($snippet);
+		$snippet=mysql_real_escape_string($snippet);
+		$book_id=get_book_id($t10,$isbn_check);
+		$qry="SELECT id FROM reviews where book_id=$book_id and source_id=12943";
+		//print $book_id; exit;
+		$rst=mysql_query($qry,$t10) or print mysql_error();
+		$rows=mysql_fetch_assoc($rst);
+		$temp_rev=$rows['id'];
+		mysql_free_result($rst);
+				
+		if($temp_rev == '') {
+		//print $review; exit;
+		$qry="INSERT INTO reviews (book_id, source_id, source_url, snippet, status_id) VALUES ('$book_id', '12943', '$review_url', '$snippet', 2)";
+					print "Inserting into reviews db, book: $book_id<br>\n";
+					mysql_query($qry, $t10) or print mysql_error()."<br>\n";
+					$review_id=mysql_insert_id();
+					
+		$review=mysql_real_escape_string($review);
+		$qry="INSERT INTO raw_reviews (review_id, review_text) VALUES ('$review_id', '$review')";
+					print "Inserting into raw_reviews db: $review_id<br>\n";
+					mysql_query($qry, $t10) or print mysql_error()."<br>\n";
+					
+		}
+		else {
+			print "$title already in the database<br>\n";
+		}
+}
+print "Deleting from the temp $id table<br>\n";
+	$qry="delete from temp where (id=$id)";//delete from temp thinger		
+	mysql_query($qry, $t10);
+
+
+
+?>
